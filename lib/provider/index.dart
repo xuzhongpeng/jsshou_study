@@ -3,10 +3,10 @@
  * @email: xuzhongpeng@foxmail.com
  * @Date: 2019-08-07 16:45:09
  * @LastEditors: xuzhongpeng
- * @LastEditTime: 2019-08-21 15:42:13
+ * @LastEditTime: 2019-08-29 17:38:56
  */
 import 'package:flutter/material.dart';
-import 'package:my_test/provider/store/index.dart';
+import 'package:flutter_demo/provider/store/index.dart';
 import './store/index.dart' show MyStore, Counter, UserModel;
 import 'package:provider/provider.dart' show ChangeNotifierProvider;
 

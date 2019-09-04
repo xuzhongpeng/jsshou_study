@@ -14,8 +14,7 @@ class CustomPaintRoute extends StatefulWidget {
   _CloseTapTapState createState() => _CloseTapTapState();
 }
 
-class _CloseTapTapState extends State<CustomPaintRoute>
-    with WidgetsBindingObserver {
+class _CloseTapTapState extends State<CustomPaintRoute> {
   List<Point> blackList = [Point(1, 1)]; //黑棋
   List<Point> whiteList = [Point(1, 2)]; //白棋
   bool isSuccess = false; //判断胜负
@@ -202,7 +201,6 @@ class Point {
   Point(this.x, this.y);
   @override
   String toString() {
-    // TODO: implement toString
     return 'x:' + x.toString() + "," + "y:" + y.toString();
   }
 }

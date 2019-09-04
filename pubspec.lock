@@ -114,9 +114,9 @@ packages:
   flutter_redux:
     dependency: "direct main"
     description:
-      path: "../flutter_redux"
-      relative: true
-    source: path
+      name: flutter_redux
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.5.3"
   flutter_test:
     dependency: "direct dev"
@@ -144,6 +144,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.0+2"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.0+2"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.3"
   intl:
     dependency: transitive
     description:
@@ -179,13 +193,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.3+2"
-  lpinyin:
-    dependency: "direct main"
-    description:
-      name: lpinyin
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.7"
   matcher:
     dependency: transitive
     description:
@@ -200,6 +207,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
+  myapp:
+    dependency: "direct main"
+    description:
+      path: "../myapp"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   package_config:
     dependency: transitive
     description:
@@ -214,6 +228,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.2"
+  path_provider:
+    dependency: transitive
+    description:
+      name: path_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0+1"
   pedantic:
     dependency: transitive
     description:
@@ -259,10 +280,10 @@ packages:
   redux:
     dependency: transitive
     description:
-      path: "../redux.dart"
-      relative: true
-    source: path
-    version: "3.0.1"
+      name: redux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -347,3 +368,4 @@ packages:
     version: "2.1.16"
 sdks:
   dart: ">=2.2.0 <3.0.0"
+  flutter: ">=0.1.4 <2.0.0"

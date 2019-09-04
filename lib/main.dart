@@ -8,7 +8,7 @@ import './stream/stream_test.dart';
 import './inherit/my_inherit.dart';
 import './MVVM/index.dart';
 import './charts/charts_test.dart';
-import 'package:my_test/canvas/canvas_test.dart';
+import 'package:flutter_demo/canvas/canvas_test.dart';
 
 void main() {
   runApp(StartPage());
@@ -21,7 +21,7 @@ class StartPage extends StatelessWidget {
     'inherit': (_) => MyInherit(),
     'mvvm': (_) => MvvmTest(),
     'charts': (_) => ChartsTest(),
-    '五子棋': (_) => CustomPaintRoute()
+    '五子棋': (_) => CustomPaintRoute(),
   };
   @override
   Widget build(BuildContext context) {
