@@ -26,9 +26,18 @@ dependencies:
   provider: 3.0.0+1 #数据管理层
   json_annotation: ^1.2.0
   # lpinyin: ^1.0.7 #汉字转拼音
-  charts_flutter: 0.7.0
+  charts_flutter: 0.8.0
+  # example:
+  #   git:
+  #     url: https://github.com/google/charts.git
+  #     ref: master
+  #     path: charts_flutter/example
   flutter_redux: 0.5.3
+  scoped_model: 1.0.1
+
   #  path: ../flutter_redux/
+# dependency_overrides:
+#   charts_flutter: 0.8.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

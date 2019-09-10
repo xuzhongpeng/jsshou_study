@@ -9,6 +9,8 @@ import './inherit/my_inherit.dart';
 import './MVVM/index.dart';
 import './charts/charts_test.dart';
 import 'package:flutter_demo/canvas/canvas_test.dart';
+import './scoped/index.dart';
+import './scoped/store/index.dart';
 
 void main() {
   runApp(StartPage());
@@ -19,7 +21,8 @@ class StartPage extends StatelessWidget {
     'provider': (_) => MyProvider(),
     'stream': (_) => CounterPage(),
     'inherit': (_) => MyInherit(),
-    'mvvm': (_) => MvvmTest(),
+    // 'mvvm': (_) => MvvmTest(),
+    "scoped": (_) => MyScoped(),
     'charts': (_) => ChartsTest(),
     '五子棋': (_) => CustomPaintRoute(),
   };
@@ -28,21 +31,46 @@ class StartPage extends StatelessWidget {
     final store = new Store<int>(counterReducer, initialState: 0);
     return MyStore.init(
       context: context,
-      child: MaterialApp(
-          routes: routes,
-          home: Builder(builder: (context) {
-            return Scaffold(
-              appBar: AppBar(
-                leading: Icon(Icons.arrow_back),
-                title: Text('FirstPage'),
-              ),
-              body: Center(
-                child: ListView(
-                  children: [
-                    ...routes.keys.map((route) {
-                      return GestureDetector(
+      child: MyStoreScoped.init(
+        context: context,
+        child: MaterialApp(
+            routes: routes,
+            home: Builder(builder: (context) {
+              return Scaffold(
+                appBar: AppBar(
+                  leading: Icon(Icons.arrow_back),
+                  title: Text('FirstPage'),
+                ),
+                body: Center(
+                  child: ListView(
+                    children: [
+                      ...routes.keys.map((route) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(route);
+                          },
+                          child: Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom:
+                                        BorderSide(color: Colors.grey[500]))),
+                            child: Center(
+                              child: Text(route),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                      GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed(route);
+                          Navigator.of(context).push(PageRouteBuilder(
+                            opaque: false,
+                            pageBuilder: (BuildContext context, _, __) {
+                              return new FlutterReduxApp(
+                                store: store,
+                              );
+                            },
+                          ));
                         },
                         child: Container(
                           height: 60,
@@ -50,37 +78,16 @@ class StartPage extends StatelessWidget {
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[500]))),
                           child: Center(
-                            child: Text(route),
+                            child: Text('redux'),
                           ),
                         ),
-                      );
-                    }).toList(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(PageRouteBuilder(
-                          opaque: false,
-                          pageBuilder: (BuildContext context, _, __) {
-                            return new FlutterReduxApp(
-                              store: store,
-                            );
-                          },
-                        ));
-                      },
-                      child: Container(
-                        height: 60,
-                        decoration: BoxDecoration(
-                            border: Border(
-                                bottom: BorderSide(color: Colors.grey[500]))),
-                        child: Center(
-                          child: Text('redux'),
-                        ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            );
-          })),
+              );
+            })),
+      ),
     );
   }
 }
