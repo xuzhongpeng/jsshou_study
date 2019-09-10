@@ -11,6 +11,7 @@ import './charts/charts_test.dart';
 import 'package:flutter_demo/canvas/canvas_test.dart';
 import './scoped/index.dart';
 import './scoped/store/index.dart';
+import './AnimatedBuilder/index.dart';
 
 void main() {
   runApp(StartPage());
@@ -25,6 +26,7 @@ class StartPage extends StatelessWidget {
     "scoped": (_) => MyScoped(),
     'charts': (_) => ChartsTest(),
     '五子棋': (_) => CustomPaintRoute(),
+    'AnimatedBuilder': (_) => MyAnimatedBuilder()
   };
   @override
   Widget build(BuildContext context) {
