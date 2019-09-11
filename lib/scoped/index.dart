@@ -3,7 +3,7 @@
  * @email: xuzhongpeng@foxmail.com
  * @Date: 2019-08-07 16:45:09
  * @LastEditors: xuzhongpeng
- * @LastEditTime: 2019-09-10 11:00:59
+ * @LastEditTime: 2019-09-10 16:57:34
  */
 import 'package:flutter/material.dart';
 // import 'package:flutter_demo/provider/store/index.dart';
@@ -32,12 +32,6 @@ class FirstPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            //   RaisedButton(
-            //     child: Text('+'),
-            //     onPressed: () {
-            //       count++;
-            //     },
-            // ),
             MyStoreScoped.connect<Counter>(builder: (context, child, snapshot) {
               return RaisedButton(
                 child: Text('+'),

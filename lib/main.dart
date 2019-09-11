@@ -37,6 +37,10 @@ class StartPage extends StatelessWidget {
         context: context,
         child: MaterialApp(
             routes: routes,
+            builder: (context, child) {
+              print('main rebuild');
+              return child;
+            },
             home: Builder(builder: (context) {
               return Scaffold(
                 appBar: AppBar(

@@ -7,25 +7,29 @@ class MyInherit extends StatefulWidget {
 }
 
 class _MyInherit extends State<MyInherit> {
+  var data = 'hello flutter';
+  var dd = MyNestedChild();
   @override
   Widget build(BuildContext context) {
+    print('main rebuild');
     return Scaffold(
         appBar: new AppBar(
           title: new Text('inherit'),
         ),
         body: MyWelcomeInfo(
-          title: 'hello flutter',
+          title: data,
           child: Center(
             child: Center(
-              child: MyNestedChild(),
+              child: dd,
             ),
           ),
         ),
         floatingActionButton: FloatingActionButton(
             child: Center(child: Icon(Icons.group_work)),
             onPressed: () {
-              var a = context.inheritFromWidgetOfExactType(MyWelcomeInfo);
-              print(a);
+              setState(() {
+                data = 'this changed';
+              });
             }));
   }
 }
@@ -38,6 +42,7 @@ class MyWelcomeInfo extends InheritedWidget {
 
   @override
   bool updateShouldNotify(MyWelcomeInfo oldWidget) {
+    print('update');
     return oldWidget.title != title;
   }
 }
@@ -45,14 +50,17 @@ class MyWelcomeInfo extends InheritedWidget {
 class MyNestedChild extends StatelessWidget {
   @override
   build(BuildContext context) {
-    final MyWelcomeInfo widget =
+    final MyWelcomeInfo widget = context
+        .ancestorInheritedElementForWidgetOfExactType(MyWelcomeInfo)
+        .widget;
+    final MyWelcomeInfo widget1 =
         context.inheritFromWidgetOfExactType(MyWelcomeInfo);
+    print('child rebuild');
     return RaisedButton(
-      child: Text(widget.title),
+      child: Text(widget1.title),
       onPressed: () {
-        MyWelcomeInfo a = context.inheritFromWidgetOfExactType(MyWelcomeInfo);
-        a.title = '2222';
-        print(a);
+        // widget.title = '2222';
+        // print(widget.title);
       },
     );
   }

@@ -22,12 +22,14 @@ class _MyAnimatedBuilder extends State<MyAnimatedBuilder> {
             builder: (context, child) {
               print('builder rebuild');
               return new Column(children: [
-                RaisedButton(
-                  child: Text('-'),
-                  onPressed: () {
-                    model.decrement();
-                  },
-                ),
+                Builder(builder: (context) {
+                  return RaisedButton(
+                    child: Text('-'),
+                    onPressed: () {
+                      model.decrement();
+                    },
+                  );
+                }),
                 Text(model.count.toString()),
                 RaisedButton(
                   child: Text('+'),

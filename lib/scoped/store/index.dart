@@ -8,9 +8,6 @@ export '../model/index.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class MyStoreScoped {
-  // static BuildContext context;
-  // static BuildContext widgetCtx;
-
   //  我们将会在main.dart中runAPP实例化init
   static init({context, child}) {
     return ScopedModel<Counter>(
