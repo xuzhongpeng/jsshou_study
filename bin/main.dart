@@ -8,4 +8,17 @@ void main() {
   // b.sort((a, b) => a.compareTo(b));
 
   // print(b.toString());
+  print(_createFileName(16));
+}
+
+String _createFileName(int day) {
+  DateTime now = new DateTime.now();
+
+  DateTime fileDay = new DateTime(now.year, now.month, now.day - day);
+  return fileDay.year.toString() +
+      '-' +
+      fileDay.month.toString() +
+      '-' +
+      fileDay.day.toString() +
+      '.log';
 }

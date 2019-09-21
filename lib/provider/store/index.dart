@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' show BuildContext;
+import 'package:flutter_demo/provider/model/index.dart';
 import 'package:provider/provider.dart'
     show ChangeNotifierProvider, MultiProvider, Consumer, Provider;
 import '../model/index.dart' show Counter, UserModel;
@@ -14,8 +15,9 @@ class MyStore {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(builder: (_) => Counter()),
+        ChangeNotifierProvider(builder: (_) => UserModel()),
         ChangeNotifierProvider(
-          builder: (_) => UserModel(),
+          builder: (_) => LocalIntl(),
         )
       ],
       child: child,
