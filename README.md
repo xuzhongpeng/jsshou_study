@@ -9,5 +9,6 @@
 - redux
 - AnimatedBuilder
 - ScopedModel
+- 国际化
 
 持续更新中。。。
