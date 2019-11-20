@@ -1,4 +1,5 @@
 // import "package:lpinyin/lpinyin.dart";
+import "./downfiles.dart";
 
 void main() {
   // List<String> a = ['测试', 'D白', '2da', '1大发', 'aaa', 'CCC'];
@@ -8,7 +9,12 @@ void main() {
   // b.sort((a, b) => a.compareTo(b));
 
   // print(b.toString());
-  print(_createFileName(16));
+  // print(_createFileName(16));
+  // print(DownFiles().getVersion('PRINT'));
+  DownFiles().loadFiles(
+      "https://gunma-app.oss-cn-hangzhou.aliyuncs.com/303/duoke-settings-v1.2.29.zip",
+      type: 'PRINT',
+      version: "3.1.6");
 }
 
 String _createFileName(int day) {

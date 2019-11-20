@@ -33,6 +33,7 @@ class _MyInherit extends State<Intl> {
           Text(transle.text('third')),
           Text(transle.text('fourth')),
           Text(transle.text('fifth')),
+          TextField()
         ],
       )),
       floatingActionButton: FloatingActionButton(
