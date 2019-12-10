@@ -1,37 +1,39 @@
 #include "AppDelegate.h"
 #import "./GeneratedPluginRegistrant.h"
-#import "MyFlutterRouter.h"
-#import "ViewController.h"
-#import <flutter_boost/FlutterBoost.h>
-//static NSString* const back = @"back";
-//static NSString* const backGesture = @"backGesture";
-//static NSString* const getServerAddressDone = @"getServerAddressDone";
-//static NSString* const updateServerAddress = @"updateServerAddress";
-//static NSString* const userData = @"userData";
-//static NSString* const saveImageToGallery = @"saveImageToGallery";
-//static NSString* const shareData = @"shareData";
-//static NSString* const invalidToken = @"invalidToken";
-//
-//static NSString* const channel = @"com.gunma.flutter/system";
-
+#import "./PlatformView1.h"
+#import <package_info/PackageInfoPlugin.h>
+// #import "MyFlutterRouter.h"
+// #import "ViewController.h"
+// #import <flutter_boost/FlutterBoost.h>
+static NSString* const channel = @"com.gunma.flutter/system";
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window = window;
-    ViewController *vc = [ViewController new];
-    UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:vc];
-    [nav setNavigationBarHidden:(YES) animated:(NO)];
-    self.window.rootViewController =nav;
-    [self.window makeKeyAndVisible];
+     FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
+    FlutterMethodChannel* methodChannel = [FlutterMethodChannel
+                                           methodChannelWithName:channel
+                                           binaryMessenger:controller];
+    [methodChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+    }];
     
-    MyFlutterRouter *router = [MyFlutterRouter new];
-    router.navigationController=nav;
-    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:router
-                                                        onStart:^(FlutterEngine *fvc){
-                                                        }];
+    [PlatformView1 registerWithRegistrar:[self registrarForPlugin:@"PlatformView1"]];
+    // UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // self.window = window;
+    
+    // __weak typeof(self) weakSelf = self;
+    
+    // ViewController *vc = [ViewController new];
+    // UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:vc];
+    // [nav setNavigationBarHidden:(YES) animated:(NO)];
+    // self.window.rootViewController =nav;
+    // [self.window makeKeyAndVisible];
+    
+    // MyFlutterRouter *router = [MyFlutterRouter new];
+    // router.navigationController=nav;
+    // [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:router
+    //                                                     onStart:^(FlutterEngine *fvc){
+    //                                                     }];
 
     [GeneratedPluginRegistrant registerWithRegistry:self];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];

@@ -4,6 +4,6 @@
 #import "ViewController.h"
 
 @interface AppDelegate : FlutterAppDelegate
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navController;
+// @property (strong, nonatomic) UIWindow *window;
+// @property (strong, nonatomic) UINavigationController *navController;
 @end

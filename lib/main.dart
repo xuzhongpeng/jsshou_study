@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:flutter_demo/platform/platform.dart';
 import './provider/index.dart';
 import './provider/store/index.dart';
 import './redux/index.dart';
@@ -51,7 +52,8 @@ class StartPageState extends State<StartPage> {
     '五子棋': (_) => CustomPaintRoute(),
     'AnimatedBuilder': (_) => MyAnimatedBuilder(),
     'notification': (_) => NotificationRoute(),
-    'Intl': (_) => Intl()
+    'Intl': (_) => Intl(),
+    'platformView': (_) => UIActivityIndicator()
   };
   @override
   Widget build(BuildContext context) {
