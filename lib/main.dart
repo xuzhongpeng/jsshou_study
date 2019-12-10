@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_demo/platform/platform.dart';
+import 'package:flutter_demo/render_object/render_object.dart';
 import './provider/index.dart';
 import './provider/store/index.dart';
 import './redux/index.dart';
@@ -53,7 +54,8 @@ class StartPageState extends State<StartPage> {
     'AnimatedBuilder': (_) => MyAnimatedBuilder(),
     'notification': (_) => NotificationRoute(),
     'Intl': (_) => Intl(),
-    'platformView': (_) => UIActivityIndicator()
+    'platformView': (_) => UIActivityIndicator(),
+    "Widget、Element、RenderObject": (_) => RenderObjectDemo()
   };
   @override
   Widget build(BuildContext context) {
