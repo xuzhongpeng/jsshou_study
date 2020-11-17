@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "design_patterns",
-            "cwd": "design_patterns",
+            "name": "Dart",
+            "type": "dart",
             "request": "launch",
-            "type": "dart"
+            "program": "design_patterns/bin/main.dart"
         }
     ]
 }
