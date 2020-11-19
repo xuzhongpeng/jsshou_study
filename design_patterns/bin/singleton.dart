@@ -15,9 +15,10 @@ class _SingleTon {
 class RunSingleTon implements Run {
   @override
   main() {
-    print('单例模式创建');
     print(_SingleTon().count++);
     print(_SingleTon.instance.count++);
     print(_SingleTon.instance.count++);
   }
+  @override
+  String name="单例模式";
 }

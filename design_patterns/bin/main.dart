@@ -2,15 +2,21 @@ import 'builder_pattern.dart';
 import 'factory.dart';
 import 'run.dart';
 import 'singleton.dart';
+import 'prototype.dart';
 
 main() {
   List<Run> run = [
     //工厂模式
-    RunFactory(), 
+    RunFactory(),
     //单例模式
     RunSingleTon(),
     //建造者模式
-    RunBuilderPattern()
+    RunBuilderPattern(),
+    //原型模式
+    RunPrototype()
   ];
-  run.forEach((r) => r.main());
+  run.forEach((r) {
+    print(r.name + "开始创建");
+    r.main();
+  });
 }

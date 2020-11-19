@@ -19,7 +19,6 @@ class ColorPen implements Pen {
 class RunFactory implements Run {
   @override
   main() {
-    print('工厂模式创建');
     var pencil = getPen("Pencil");
     var colorPen = getPen("ColorPen");
     pencil.draw();
@@ -35,4 +34,6 @@ class RunFactory implements Run {
       return null;
     }
   }
+  @override
+  String name="工厂模式";
 }

@@ -125,7 +125,6 @@ class MealBuilder {
 class RunBuilderPattern implements Run {
   @override
   main() {
-    print('建造者模式创建');
     MealBuilder mealBuilder = new MealBuilder();
     Meal vegMeal = mealBuilder.prepareVegMeal();
     print("Veg Meal");
@@ -137,4 +136,6 @@ class RunBuilderPattern implements Run {
     nonVegMeal.showItems();
     print("Total Cost: " + nonVegMeal.getCost().toString());
   }
+  @override
+  String name="建造者模式";
 }
