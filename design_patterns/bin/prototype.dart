@@ -30,8 +30,8 @@ class RunPrototype implements Run {
   main(){
     var a= ConcretePrototype1("1");
     // var b= ConcretePrototype2("1");
-    print(a);
-    print(a.clone());
+    print(a.hashCode);
+    print(a.clone().hashCode);
   }
   @override
   String name="原型模式";
