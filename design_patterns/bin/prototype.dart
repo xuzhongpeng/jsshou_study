@@ -1,7 +1,5 @@
 import './run.dart';
 
-
-
 class RunPrototype implements Run {
   @override
   main(){
