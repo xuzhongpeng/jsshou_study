@@ -17,8 +17,8 @@ class ConcretePrototype1 extends ProtoType{
   }
 }
 class ConcretePrototype2 extends ProtoType{
-  ConcretePrototype2(String id) : super(id);
-  
+  ConcretePrototype2(String id,this.name) : super(id);
+  final String name;
   @override
   ProtoType clone() {
     ProtoType protoType = new ConcretePrototype2(this.id);
