@@ -7,31 +7,24 @@ abstract class ProtoType{
   void set id(String id)=>this._id=id;
   ProtoType clone();
 }
-class ConcretePrototype1 extends ProtoType{
-  ConcretePrototype1(String id) : super(id);
-  
-  @override
-  ProtoType clone() {
-    ProtoType protoType = new ConcretePrototype1(this.id);
-    return protoType;
-  }
-}
-class ConcretePrototype2 extends ProtoType{
-  ConcretePrototype2(String id,this.name) : super(id);
+class ConcretePrototype extends ProtoType{
+  ConcretePrototype(String id,this.name) : super(id);
   final String name;
   @override
-  ProtoType clone() {
-    ProtoType protoType = new ConcretePrototype2(this.id,this.name);
+  ConcretePrototype clone() {
+    ProtoType protoType = new ConcretePrototype(this.id,this.name);
     return protoType;
   }
 }
 class RunPrototype implements Run {
   @override
   main(){
-    var a= ConcretePrototype1("1");
-    // var b= ConcretePrototype2("1");
-    print(a.hashCode);
-    print(a.clone().hashCode);
+    var a= ConcretePrototype("1","clone");
+    var b= a.clone();
+    print("实例a的hashCode:"+a.hashCode.toString());
+    print("实例b的hashCode:"+b.hashCode.toString());
+    print("实例a的name:"+a.name);
+    print("实例b的name:"+b.name);
   }
   @override
   String name="原型模式";
