@@ -18,5 +18,6 @@ main() {
   run.forEach((r) {
     print("\n******${r.name}开始创建**********");
     r.main();
+    print("******${r.name}结束**********\n");
   });
 }
