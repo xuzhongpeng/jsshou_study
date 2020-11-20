@@ -16,7 +16,15 @@ class ConcretePrototype1 extends ProtoType{
     return protoType;
   }
 }
-
+class ConcretePrototype2 extends ProtoType{
+  ConcretePrototype2(String id) : super(id);
+  
+  @override
+  ProtoType clone() {
+    ProtoType protoType = new ConcretePrototype2(this.id);
+    return protoType;
+  }
+}
 class RunPrototype implements Run {
   @override
   main(){
