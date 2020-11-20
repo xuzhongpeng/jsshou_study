@@ -1,5 +1,9 @@
 import './run.dart';
 
+abstract class ProtoType{
+  String _id;
+  
+}
 
 class RunPrototype implements Run {
   @override
