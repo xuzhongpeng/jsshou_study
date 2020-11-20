@@ -28,7 +28,8 @@ class ConcretePrototype2 extends ProtoType{
 class RunPrototype implements Run {
   @override
   main(){
-
+    var a= ConcretePrototype1("1");
+    var b= ConcretePrototype2("1");
   }
   @override
   String name="原型模式";
