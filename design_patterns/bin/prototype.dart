@@ -21,7 +21,7 @@ class ConcretePrototype2 extends ProtoType{
   final String name;
   @override
   ProtoType clone() {
-    ProtoType protoType = new ConcretePrototype2(this.id);
+    ProtoType protoType = new ConcretePrototype2(this.id,this.name);
     return protoType;
   }
 }
