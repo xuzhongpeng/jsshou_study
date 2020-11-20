@@ -16,7 +16,7 @@ main() {
     RunPrototype()
   ];
   run.forEach((r) {
-    print(r.name + "开始创建");
+    print("\n******${r.name}开始创建**********");
     r.main();
   });
 }
