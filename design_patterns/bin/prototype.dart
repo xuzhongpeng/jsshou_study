@@ -7,6 +7,15 @@ abstract class ProtoType{
   void set id(String id)=>this._id=id;
   ProtoType clone();
 }
+class ConcretePrototype1 extends ProtoType{
+  ConcretePrototype1(String id) : super(id);
+  
+  @override
+  ProtoType clone() {
+    ProtoType protoType = new ConcretePrototype1(this.id);
+    return protoType;
+  }
+}
 
 class RunPrototype implements Run {
   @override
