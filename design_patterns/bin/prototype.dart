@@ -19,7 +19,7 @@ class ConcretePrototype extends ProtoType{
 class RunPrototype implements Run {
   @override
   main(){
-    var a= ConcretePrototype("1","clone");
+    var a= ConcretePrototype("1","protoType模式");
     var b= a.clone();
     print("实例a的hashCode:"+a.hashCode.toString());
     print("实例b的hashCode:"+b.hashCode.toString());
