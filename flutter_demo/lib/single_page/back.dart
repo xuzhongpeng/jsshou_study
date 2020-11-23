@@ -50,6 +50,7 @@ class _Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
+        var _route = ModalRoute.of(context);
         return Future.value(true);
       },
       child: Scaffold(
