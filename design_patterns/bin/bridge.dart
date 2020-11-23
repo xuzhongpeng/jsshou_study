@@ -55,5 +55,8 @@ class RunBridge implements Run {
     RefinedCoffee largeWithMilk = new LargeCoffee(Milk());
     largeWithMilk.orderCoffee(2);
     largeWithMilk.checkQuality(90);
+    RefinedCoffee largeWithSugar = new LargeCoffee(Sugar());
+    largeWithSugar.orderCoffee(1);
+    largeWithSugar.checkQuality(100);
   }
 }
