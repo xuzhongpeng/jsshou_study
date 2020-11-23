@@ -55,7 +55,7 @@ class StartPageState extends State<StartPage> {
     "redux": (_) => FlutterReduxApp(
           store: new Store<int>(counterReducer, initialState: 0),
         ),
-        "物理返回测试":(_)=>
+        "物理返回测试":(_)=>BackPage
   };
   @override
   Widget build(BuildContext context) {
@@ -88,6 +88,9 @@ class StartPageState extends State<StartPage> {
       ),
     );
   }
+}
+
+class BackPage {
 }
 
 class MainPage extends StatelessWidget {
