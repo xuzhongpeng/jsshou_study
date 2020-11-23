@@ -131,18 +131,18 @@ class OwnNavigatorObserver extends NavigatorObserver {
   @override
   void didPop(Route route, Route previousRoute) {
     super.didPop(route, previousRoute);
-    print("wow， navigator has popped" + route.settings.name.toString());
+    print("wow， navigator has popped " + route.settings.name.toString());
   }
 
   @override
   void didPush(Route route, Route previousRoute) {
     super.didPush(route, previousRoute);
-    print("wow, navigator has pushed" + route.settings.name.toString());
+    print("wow, navigator has pushed " + route.settings.name.toString());
   }
 
   @override
   void didRemove(Route route, Route previousRoute) {
     super.didRemove(route, previousRoute);
-    print("wow, navigator has remove" + route.settings.name.toString());
+    print("wow, navigator has remove " + route.settings.name.toString());
   }
 }
