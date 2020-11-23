@@ -44,6 +44,9 @@ class _Page1 extends StatelessWidget implements JnStatelessWidget {
       title: Text("Page1"),
     ));
   }
+
+  @override
+  String pageName="page1";
 }
 
 class _Page2 extends StatelessWidget {
