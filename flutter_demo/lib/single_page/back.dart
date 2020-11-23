@@ -25,7 +25,7 @@ class _BackPageState extends State<BackPage> {
             child: Text("page1"),
             onPressed: () {
               print(_Page1().pageName);
-              Utils
+              Utils.push(context, _Page1());
             },
           ),
           RaisedButton(
