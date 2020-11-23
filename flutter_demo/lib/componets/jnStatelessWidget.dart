@@ -1,12 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-class JnStatelessWidget extends StatelessWidget{
+abstract class JnStatelessWidget extends StatelessWidget{
+  @protected
   static String pageName;
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
-  }
 }
