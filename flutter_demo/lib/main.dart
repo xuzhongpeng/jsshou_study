@@ -54,7 +54,8 @@ class StartPageState extends State<StartPage> {
     "Widget、Element、RenderObject": (_) => RenderObjectDemo(),
     "redux": (_) => FlutterReduxApp(
           store: new Store<int>(counterReducer, initialState: 0),
-        )
+        ),
+        "物理返回测试":(_)=>
   };
   @override
   Widget build(BuildContext context) {
