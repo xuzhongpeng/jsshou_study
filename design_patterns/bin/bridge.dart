@@ -15,8 +15,8 @@ abstract class Coffee {
 //修正抽象化类，增加品控方法
 abstract class RefinedCoffee extends Coffee{
   RefinedCoffee(ICoffeeAdditives additives) : super(additives);
-  checkQuality(){
-    
+  checkQuality(int score){
+    print("添加太多");
   }
 }
 
