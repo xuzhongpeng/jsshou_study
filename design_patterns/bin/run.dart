@@ -6,7 +6,7 @@ abstract class Run {
 }
 class RunX implements Run {
   @override
-  main() {
+  void main() {
   }
   @override
   String name="";

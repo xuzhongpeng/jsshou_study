@@ -8,6 +8,6 @@ class RunBridge implements Run{
 
   @override
   main() {
-    return null;
+    
   }
 }
