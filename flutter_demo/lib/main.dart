@@ -122,28 +122,6 @@ class MainPage extends StatelessWidget {
                 ),
               );
             }).toList(),
-            GestureDetector(
-              onTap: () {
-                // GitHooks.init();
-                Navigator.of(context).push(PageRouteBuilder(
-                  opaque: false,
-                  pageBuilder: (BuildContext context, _, __) {
-                    return new FlutterReduxApp(
-                      store: new Store<int>(counterReducer, initialState: 0),
-                    );
-                  },
-                ));
-              },
-              child: Container(
-                height: 60,
-                decoration: BoxDecoration(
-                    border:
-                        Border(bottom: BorderSide(color: Colors.grey[500]))),
-                child: Center(
-                  child: Text('redux'),
-                ),
-              ),
-            )
           ],
         ),
       ),
