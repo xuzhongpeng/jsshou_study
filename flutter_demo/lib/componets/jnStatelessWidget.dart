@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-abstract class JnStatelessWidget extends StatelessWidget{
+abstract class JnStatelessWidget{
   static String pageName;
 }
