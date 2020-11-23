@@ -6,7 +6,7 @@ abstract class ICoffeeAdditives {
   void addSomething();
 }
 
-// 创建抽象化
+// 创建抽象化类
 abstract class Coffee {
   ICoffeeAdditives additives;
   Coffee(this.additives);
