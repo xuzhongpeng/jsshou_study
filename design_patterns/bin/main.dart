@@ -1,3 +1,4 @@
+import 'adapter.dart';
 import 'builder_pattern.dart';
 import 'factory.dart';
 import 'run.dart';
@@ -13,7 +14,9 @@ main() {
     //建造者模式
     RunBuilderPattern(),
     //原型模式
-    RunPrototype()
+    RunPrototype(),
+    //适配器模式
+    RunAdapter()
   ];
   run.forEach((r) {
     print("\n***********${r.name}开始创建***********");
