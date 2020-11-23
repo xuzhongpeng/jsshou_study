@@ -4,3 +4,10 @@ abstract class Run {
   //返回该模式名字
   String name;
 }
+class RunX implements Run {
+  @override
+  main() {
+  }
+  @override
+  String name="";
+}
