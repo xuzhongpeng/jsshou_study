@@ -19,6 +19,7 @@ import './notification/index.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import './intl/intl.dart';
 import './intl/translations.dart';
+import './single_page/back.dart';
 // import 'package:git_hooks/git_hooks.dart';
 
 main() async {
@@ -55,7 +56,7 @@ class StartPageState extends State<StartPage> {
     "redux": (_) => FlutterReduxApp(
           store: new Store<int>(counterReducer, initialState: 0),
         ),
-        "物理返回测试":(_)=>BackPage
+        "物理返回测试":(_)=>BackPage()
   };
   @override
   Widget build(BuildContext context) {
