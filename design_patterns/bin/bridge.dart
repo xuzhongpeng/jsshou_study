@@ -20,25 +20,40 @@ abstract class RefinedCoffee extends Coffee {
     print("添加" + score.toString() + "%");
   }
 }
+
 //创建实现化部分
-class Milk implements ICoffeeAdditives{
+class Milk implements ICoffeeAdditives {
   @override
   void addSomething() {
     print("加奶");
   }
 }
-class Sugar implements ICoffeeAdditives{
+
+class Sugar implements ICoffeeAdditives {
   @override
   void addSomething() {
     print("加糖");
   }
 }
+
+class LargeCoffee extends RefinedCoffee {
+  LargeCoffee(ICoffeeAdditives additives) : super(additives);
+
+  @override
+  void orderCoffee(int count) {
+    additives.addSomething();
+    print("大杯咖啡" + count.toString() + "杯");
+  }
+}
+
 class RunBridge implements Run {
   @override
   String name = "桥接模式";
 
   @override
   main() {
-    RefinedCoffee largeWithMilk=new LargeCo
+    RefinedCoffee largeWithMilk = new LargeCoffee(Milk());
+    largeWithMilk.orderCoffee(2);
+    largeWithMilk.checkQuality(90);
   }
 }
