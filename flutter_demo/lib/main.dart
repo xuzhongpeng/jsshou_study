@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_demo/platform/platform.dart';
 import 'package:flutter_demo/render_object/render_object.dart';
 import './provider/index.dart';
@@ -39,9 +38,6 @@ class StartPageState extends State<StartPage> {
   @override
   void initState() {
     super.initState();
-    FlutterBoost.singleton.registerPageBuilders({
-      'first': (pageName, params, _) => MainPage(routes),
-    });
   }
 
   Map<String, WidgetBuilder> routes = {
@@ -81,7 +77,6 @@ class StartPageState extends State<StartPage> {
                 GlobalWidgetsLocalizations.delegate,
               ],
               routes: routes,
-              builder: FlutterBoost.init(),
               home: Builder(builder: (context) {
                 return MainPage(routes);
               }));
@@ -102,7 +97,6 @@ class MainPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            FlutterBoost.singleton.closeByContext(context);
           },
         ),
         title: Text('FirstPage'),
