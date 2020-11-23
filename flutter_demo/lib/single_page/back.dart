@@ -49,8 +49,10 @@ class _Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: ()=>Future.value(true),
-          child: Scaffold(
+      onWillPop: () {
+        return Future.value(false);
+      },
+      child: Scaffold(
           appBar: AppBar(
         title: Text("Page2"),
       )),
