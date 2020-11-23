@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-abstract class JnStatelessWidget{
-  String pageName;
+abstract class JnStatelessWidget extends StatelessWidget{
+  final String pageName='default';
 }
