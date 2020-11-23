@@ -20,20 +20,22 @@ class _BackPageState extends State<BackPage> {
   }
 }
 
-import 'package:flutter/material.dart';
-
-class  extends StatefulWidget{
+class _Page1 extends StatefulWidget {
   @override
-  _State createState() =>_State();
+  _Page1State createState() => _Page1State();
 }
-class _State extends State<>{
 
+class _Page1State extends State<_Page1> {
   @override
   void initState() {
     super.initState();
-}
+  }
+
   @override
   Widget build(BuildContext context) {
-    return null;
-}
+    return Scaffold(
+        appBar: AppBar(
+      title: Text("Page1"),
+    ));
+  }
 }
