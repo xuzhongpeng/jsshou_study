@@ -30,7 +30,7 @@ class _BackPageState extends State<BackPage> {
           ),
           RaisedButton(
             child: Text("page2"),
-            onPressed: () =>Utils.push(context, _Page2()),
+            onPressed: () => Utils.push(context, _Page2()),
           )
         ],
       ),
@@ -38,7 +38,7 @@ class _BackPageState extends State<BackPage> {
   }
 }
 
-class _Page1 extends  JnStatelessWidget {
+class _Page1 extends JnStatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +51,9 @@ class _Page1 extends  JnStatelessWidget {
   final String pageName = "page1";
 }
 
-class _Page2 extends StatelessWidget {
+class _Page2 extends JnStatelessWidget {
+  @override
+  final String pageName = "page2";
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
