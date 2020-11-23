@@ -51,7 +51,10 @@ class StartPageState extends State<StartPage> {
     'notification': (_) => NotificationRoute(),
     'Intl': (_) => Intl(),
     'platformView': (_) => UIActivityIndicator(),
-    "Widget、Element、RenderObject": (_) => RenderObjectDemo()
+    "Widget、Element、RenderObject": (_) => RenderObjectDemo(),
+    "redux": (_) => FlutterReduxApp(
+          store: new Store<int>(counterReducer, initialState: 0),
+        )
   };
   @override
   Widget build(BuildContext context) {
@@ -96,8 +99,7 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-          },
+          onPressed: () {},
         ),
         title: Text('FirstPage'),
       ),
