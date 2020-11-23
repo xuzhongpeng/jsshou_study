@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../componets/jnStatelessWidget.dart';
+import '../components/jnStatelessWidget.dart';
+import '../components/utils.dart';
 
 class BackPage extends StatefulWidget {
   @override
@@ -24,8 +25,7 @@ class _BackPageState extends State<BackPage> {
             child: Text("page1"),
             onPressed: () {
               print(_Page1().pageName);
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => _Page1()));
+              Utils
             },
           ),
           RaisedButton(
