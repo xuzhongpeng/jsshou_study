@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../componets/jnStatelessWidget.dart';
 class BackPage extends StatefulWidget {
   @override
   _BackPageState createState() => _BackPageState();
@@ -35,7 +35,7 @@ class _BackPageState extends State<BackPage> {
   }
 }
 
-class _Page1 extends StatelessWidget {
+class _Page1 extends JnStatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
