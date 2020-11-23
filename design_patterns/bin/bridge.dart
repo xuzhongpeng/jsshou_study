@@ -45,7 +45,15 @@ class LargeCoffee extends RefinedCoffee {
     print("大杯咖啡" + count.toString() + "杯");
   }
 }
+class MidCoffee extends RefinedCoffee {
+  MidCoffee(ICoffeeAdditives additives) : super(additives);
 
+  @override
+  void orderCoffee(int count) {
+    additives.addSomething();
+    print("中杯咖啡" + count.toString() + "杯");
+  }
+}
 class RunBridge implements Run {
   @override
   String name = "桥接模式";
@@ -55,7 +63,7 @@ class RunBridge implements Run {
     RefinedCoffee largeWithMilk = new LargeCoffee(Milk());
     largeWithMilk.orderCoffee(2);
     largeWithMilk.checkQuality(90);
-    RefinedCoffee largeWithSugar = new LargeCoffee(Sugar());
+    RefinedCoffee largeWithSugar = new MidCoffee(Sugar());
     largeWithSugar.orderCoffee(1);
     largeWithSugar.checkQuality(100);
   }
