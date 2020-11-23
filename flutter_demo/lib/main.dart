@@ -131,21 +131,23 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-class OwnNavigatorObserver extends NavigatorObserver{
+
+class OwnNavigatorObserver extends NavigatorObserver {
   @override
   void didPop(Route route, Route previousRoute) {
     super.didPop(route, previousRoute);
-    print("wow， navigator has popped");
+    print("wow， navigator has popped" + route.settings.name);
   }
 
   @override
   void didPush(Route route, Route previousRoute) {
     super.didPush(route, previousRoute);
-    print("wow, navigator has pushed");
+    print("wow, navigator has pushed" + route.settings.name);
   }
+
   @override
   void didRemove(Route route, Route previousRoute) {
     super.didRemove(route, previousRoute);
-    print("wow, navigator has remove"+route.);
+    print("wow, navigator has remove" + route.settings.name);
   }
 }
