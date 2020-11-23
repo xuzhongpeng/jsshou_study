@@ -82,6 +82,7 @@ class StartPageState extends State<StartPage> {
                 GlobalWidgetsLocalizations.delegate,
               ],
               routes: routes,
+              navigatorObservers: [],
               home: Builder(builder: (context) {
                 return MainPage(routes);
               }));
@@ -129,4 +130,7 @@ class MainPage extends StatelessWidget {
       ),
     );
   }
+}
+class OwnNavigatorObserver extends NavigatorObserver{
+  
 }
