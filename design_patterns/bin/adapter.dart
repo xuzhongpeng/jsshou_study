@@ -54,6 +54,26 @@ class MediaAdapter implements MediaPlayer {
   }
 }
 
+// 创建实现了 MediaPlayer 接口的实体类。
+class AudioPlayer implements MediaPlayer {
+  MediaAdapter mediaAdapter;
+
+  @override
+  void play(String audioType, String fileName) {
+    //播放 mp3 音乐文件的内置支持
+    if (audioType == "mp3") {
+      print("Playing mp3 file. Name: " + fileName);
+    }
+    //mediaAdapter 提供了播放其他文件格式的支持
+    else if (audioType == "vlc" || audioType == "mp4") {
+      mediaAdapter = new MediaAdapter(audioType);
+      mediaAdapter.play(audioType, fileName);
+    } else {
+      print("Invalid media. " + audioType + " format not supported");
+    }
+  }
+}
+
 class RunAdapter implements Run {
   @override
   main() {}
