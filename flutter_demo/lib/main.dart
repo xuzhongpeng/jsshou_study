@@ -100,10 +100,6 @@ class MainPage extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
         title: Text('FirstPage'),
       ),
       body: Center(
