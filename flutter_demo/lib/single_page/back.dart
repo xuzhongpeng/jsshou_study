@@ -39,7 +39,6 @@ class _BackPageState extends State<BackPage> {
   }
 }
 
-// ignore: must_be_immutable
 class _Page1 extends  JnStatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,7 @@ class _Page1 extends  JnStatelessWidget {
   }
 
   @override
-  String pageName = "page1";
+  final String pageName = "page1";
 }
 
 class _Page2 extends StatelessWidget {
