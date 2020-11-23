@@ -30,8 +30,7 @@ class _BackPageState extends State<BackPage> {
           ),
           RaisedButton(
             child: Text("page2"),
-            onPressed: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => _Page2())),
+            onPressed: () =>Utils.push(context, _Page2()),
           )
         ],
       ),
