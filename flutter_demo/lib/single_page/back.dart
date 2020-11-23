@@ -22,8 +22,11 @@ class _BackPageState extends State<BackPage> {
         children: <Widget>[
           RaisedButton(
             child: Text("page1"),
-            onPressed: () => Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => _Page1())),
+            onPressed: () {
+              print(_Page1().pageName);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => _Page1()));
+            },
           ),
           RaisedButton(
             child: Text("page2"),
@@ -46,7 +49,7 @@ class _Page1 extends StatelessWidget implements JnStatelessWidget {
   }
 
   @override
-  String pageName="page1";
+  String pageName = "page1";
 }
 
 class _Page2 extends StatelessWidget {
