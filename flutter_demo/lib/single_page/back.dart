@@ -39,6 +39,7 @@ class _BackPageState extends State<BackPage> {
   }
 }
 
+// ignore: must_be_immutable
 class _Page1 extends StatelessWidget implements JnStatelessWidget {
   @override
   Widget build(BuildContext context) {
