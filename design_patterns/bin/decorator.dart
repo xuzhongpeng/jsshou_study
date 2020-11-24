@@ -64,5 +64,5 @@ class RunDecorator implements Run {
   }
 
   @override
-  String name = "";
+  String name = "装饰器模式";
 }
