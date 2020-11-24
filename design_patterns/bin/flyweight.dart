@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'run.dart';
 
 abstract class Shape {
@@ -67,7 +69,7 @@ class RunFlyweight implements Run {
       }
    }
     static String getRandomColor() {
-      return colors[(Math.random()*colors.length)];
+      return colors[math.Random];
    }
     static int getRandomX() {
       return (int)(Math.random()*100 );
