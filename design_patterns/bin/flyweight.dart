@@ -69,7 +69,7 @@ class RunFlyweight implements Run {
       }
    }
     static String getRandomColor() {
-      return colors[math.Random];
+      return colors[math.Random(colors.length)];
    }
     static int getRandomX() {
       return (int)(Math.random()*100 );
