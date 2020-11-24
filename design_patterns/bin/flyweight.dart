@@ -69,13 +69,13 @@ class RunFlyweight implements Run {
       }
    }
      String getRandomColor() {
-      return colors[math.Random(colors.length)];
+      return colors[math.Random().nextInt(colors.length)];
    }
-    static int getRandomX() {
-      return (int)(Math.random()*100 );
+    int getRandomX() {
+      return math.Random().nextInt(100);
    }
-    static int getRandomY() {
-      return (int)(Math.random()*100);
+    int getRandomY() {
+      return math.Random().nextInt(100);
    }
   @override
   String name="享元模式";
