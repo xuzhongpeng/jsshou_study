@@ -4,6 +4,7 @@ import 'builder_pattern.dart';
 import 'decorator.dart';
 import 'facade.dart';
 import 'factory.dart';
+import 'flyweight.dart';
 import 'run.dart';
 import 'singleton.dart';
 import 'prototype.dart';
@@ -25,7 +26,9 @@ main() {
     //装饰器模式
     RunDecorator(),
     //外观模式
-    RunFacade()
+    RunFacade(),
+    //享元模式
+    RunFlyweight()
   ];
   run.forEach((r) {
     print("\n***********${r.name}开始创建***********");
