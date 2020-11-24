@@ -68,7 +68,7 @@ class RunFlyweight implements Run {
          circle.draw();
       }
    }
-    static String getRandomColor() {
+     String getRandomColor() {
       return colors[math.Random(colors.length)];
    }
     static int getRandomX() {
