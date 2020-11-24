@@ -39,6 +39,7 @@ class Circle implements Shape {
         radius.toString());
   }
 }
+
 // 创建一个工厂，生成基于给定信息的实体类的对象。
 class ShapeFactory {
   static final Map<String, Shape> circleMap = new Map();
@@ -54,29 +55,32 @@ class ShapeFactory {
     return circle;
   }
 }
+
 class RunFlyweight implements Run {
-  final List<String> colors= 
-      [ "Red", "Green", "Blue", "White", "Black" ];
+  final List<String> colors = ["Red", "Green", "Blue", "White", "Black"];
   @override
   void main() {
-      for(int i=0; i < 20; ++i) {
-         Circle circle = 
-            ShapeFactory.getCircle(getRandomColor());
-         circle.setX(getRandomX());
-         circle.setY(getRandomY());
-         circle.setRadius(100);
-         circle.draw();
-      }
-   }
-     String getRandomColor() {
-      return colors[math.Random().nextInt(colors.length)];
-   }
-    int getRandomX() {
-      return math.Random().nextInt(100);
-   }
-    int getRandomY() {
-      return math.Random().nextInt(100);
-   }
+    for (int i = 0; i < 20; ++i) {
+      Circle circle = ShapeFactory.getCircle(getRandomColor());
+      circle.setX(getRandomX());
+      circle.setY(getRandomY());
+      circle.setRadius(100);
+      circle.draw();
+    }
+  }
+
+  String getRandomColor() {
+    return colors[math.Random().nextInt(colors.length)];
+  }
+
+  int getRandomX() {
+    return math.Random().nextInt(100);
+  }
+
+  int getRandomY() {
+    return math.Random().nextInt(100);
+  }
+
   @override
-  String name="享元模式";
+  String name = "享元模式";
 }
