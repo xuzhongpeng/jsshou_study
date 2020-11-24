@@ -19,7 +19,7 @@ class Circle implements Shape {
   }
 }
 //创建实现了Shape接口的抽象类
-class ShapDecorator implements Shape {
+abstract class ShapDecorator implements Shape {
   Shape decoratedShape;
   ShapeDecorator(this.decoratedShape);
   @override
