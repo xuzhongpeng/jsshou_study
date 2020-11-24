@@ -2,6 +2,7 @@ import 'adapter.dart';
 import 'bridge.dart';
 import 'builder_pattern.dart';
 import 'decorator.dart';
+import 'facade.dart';
 import 'factory.dart';
 import 'run.dart';
 import 'singleton.dart';
@@ -22,7 +23,9 @@ main() {
     //桥接模式
     RunBridge(),
     //装饰器模式
-    RunDecorator()
+    RunDecorator(),
+    //外观模式
+    RunFacade()
   ];
   run.forEach((r) {
     print("\n***********${r.name}开始创建***********");
