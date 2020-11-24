@@ -49,10 +49,10 @@ class RunDecorator implements Run {
   @override
   void main() {
     Shape circle = new Circle();
-    ShapeDecorator redCircle = new RedShapeDecorator(new Circle());
-    ShapeDecorator redRectangle = new RedShapeDecorator(new Rectangle());
-    //Shape redCircle = new RedShapeDecorator(new Circle());
-    //Shape redRectangle = new RedShapeDecorator(new Rectangle());
+    // ShapeDecorator redCircle = new RedShapeDecorator(new Circle());
+    // ShapeDecorator redRectangle = new RedShapeDecorator(new Rectangle());
+    Shape redCircle = new RedShapeDecorator(new Circle());
+    Shape redRectangle = new RedShapeDecorator(new Rectangle());
     print("Circle with normal border");
     circle.draw();
 
