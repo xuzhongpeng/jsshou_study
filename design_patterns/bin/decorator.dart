@@ -1,13 +1,30 @@
 import 'run.dart';
+
 //创建接口
 abstract class Shape {
   void draw();
 }
+
 //创建接口实体类
 class Rectangle implements Shape {
   @override
   void draw() {
-    // TODO: implement draw
+    print("shape: Rectangle");
+  }
+}
+class Circle implements Shape {
+  @override
+  void draw() {
+    print("shape: Circle");
+  }
+}
+//创建实现了Shape接口的抽象类
+class ShapDecorator implements Shape {
+  Shape decoratedShape;
+  ShapeDecorator(this.decoratedShape);
+  @override
+  void draw() {
+    
   }
 
 }
