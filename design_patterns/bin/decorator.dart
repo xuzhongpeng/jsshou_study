@@ -43,6 +43,8 @@ class RedShapeDecorator extends ShapeDecorator {
     print("Border Color: Red");
   }
 }
+//使用 RedShapeDecorator 来装饰 Shape 对象。
+
 
 class RunDecorator implements Run {
   @override
