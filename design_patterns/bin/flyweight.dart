@@ -1,3 +1,5 @@
+import 'run.dart';
+
 abstract class Shape {
   void draw();
 }
@@ -49,4 +51,33 @@ class ShapeFactory {
     }
     return circle;
   }
+}
+class RunFlyweight implements Run {
+  final List<String> colors= 
+      [ "Red", "Green", "Blue", "White", "Black" ];
+  @override
+  void main() {
+     
+ 
+      for(int i=0; i < 20; ++i) {
+         Circle circle = 
+            (Circle)ShapeFactory.getCircle(getRandomColor());
+         circle.setX(getRandomX());
+         circle.setY(getRandomY());
+         circle.setRadius(100);
+         circle.draw();
+      }
+   }
+    static String getRandomColor() {
+      return colors[(int)(Math.random()*colors.length)];
+   }
+    static int getRandomX() {
+      return (int)(Math.random()*100 );
+   }
+    static int getRandomY() {
+      return (int)(Math.random()*100);
+   }
+  }
+  @override
+  String name="享元模式";
 }
