@@ -45,10 +45,24 @@ class RedShapeDecorator extends ShapeDecorator {
 }
 //使用 RedShapeDecorator 来装饰 Shape 对象。
 
-
 class RunDecorator implements Run {
   @override
-  void main() {}
+  void main() {
+    Shape circle = new Circle();
+    ShapeDecorator redCircle = new RedShapeDecorator(new Circle());
+    ShapeDecorator redRectangle = new RedShapeDecorator(new Rectangle());
+    //Shape redCircle = new RedShapeDecorator(new Circle());
+    //Shape redRectangle = new RedShapeDecorator(new Rectangle());
+    print("Circle with normal border");
+    circle.draw();
+
+    print("\nCircle of red border");
+    redCircle.draw();
+
+    print("\nRectangle of red border");
+    redRectangle.draw();
+  }
+
   @override
   String name = "";
 }
