@@ -14,7 +14,7 @@ class RealSubject implements Subject {
 
 class SubjectProxy implements Subject {
   final RealSubject _realSubject;
-  const ReactiveProxy(this._realSubject);
+  const SubjectProxy(this._realSubject);
   @override
   void request() {
     if (this._checkAccess()) {
