@@ -33,7 +33,24 @@ class SubjectProxy implements Subject {
 
 class RunProxy implements Run {
   @override
-  void main() {}
+  void main() {
+    print('Client: Executing the client code with a real subject:');
+const realSubject = new RealSubject();
+_clientCode(realSubject);
+
+print('');
+
+print('Client: Executing the same client code with a proxy:');
+const proxy = new ReactiveProxy(realSubject);
+_clientCode(proxy);
+  }
+  _clientCode(Subject subject) {
+    // ...
+
+    subject.request();
+
+    // ...
+}
   @override
   String name = "代理模式";
 }
