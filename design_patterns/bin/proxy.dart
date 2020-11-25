@@ -13,7 +13,8 @@ class RealSubject implements Subject {
 }
 
 class SubjectProxy implements Subject {
-  RealSubject _realSubject;
+  final RealSubject _realSubject;
+  const ReactiveProxy(this._realSubject);
   @override
   void request() {
     if (this._checkAccess()) {
@@ -42,7 +43,7 @@ class RunProxy implements Run {
     print('');
 
     print('Client: Executing the same client code with a proxy:');
-    const proxy = new ReactiveProxy(realSubject);
+    const proxy =const new ReactiveProxy(realSubject);
     _clientCode(proxy);
   }
 
