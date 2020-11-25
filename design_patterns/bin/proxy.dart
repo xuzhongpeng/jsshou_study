@@ -39,11 +39,9 @@ class RunProxy implements Run {
     print('Client: Executing the client code with a real subject:');
     const realSubject = const RealSubject();
     _clientCode(realSubject);
-
     print('');
-
     print('Client: Executing the same client code with a proxy:');
-    const proxy =const new ReactiveProxy(realSubject);
+    const proxy = const SubjectProxy(realSubject);
     _clientCode(proxy);
   }
 
