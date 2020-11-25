@@ -36,11 +36,11 @@ class SubjectProxy implements Subject {
 class RunProxy implements Run {
   @override
   void main() {
-    print('Client: Executing the client code with a real subject:');
+    print('Client: 使用RealSubject类：');
     const realSubject = const RealSubject();
     _clientCode(realSubject);
     print('');
-    print('Client: Executing the same client code with a proxy:');
+    print('Client: 使用代理类：');
     const proxy = const SubjectProxy(realSubject);
     _clientCode(proxy);
   }
