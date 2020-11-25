@@ -1,5 +1,7 @@
 
 
+import 'run.dart';
+
 class RunProxy implements Run {
   @override
   void main() {
