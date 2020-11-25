@@ -8,7 +8,7 @@ class RealSubject implements Subject {
   const RealSubject();
   @override
   void request() {
-    print("RealSubject:Handling request");
+    print("RealSubject:正在连接");
   }
 }
 
