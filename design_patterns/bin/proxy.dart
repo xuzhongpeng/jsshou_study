@@ -36,7 +36,7 @@ class RunProxy implements Run {
   @override
   void main() {
     print('Client: Executing the client code with a real subject:');
-    const realSubject = new RealSubject();
+    const realSubject = const RealSubject();
     _clientCode(realSubject);
 
     print('');
