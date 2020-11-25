@@ -24,12 +24,12 @@ class SubjectProxy implements Subject {
   }
 
   bool _checkAccess() {
-    print("Proxy: Checking access prior to firing a real request.");
+    print("Proxy: 判断当前是否可连接");
     return true;
   }
 
   void _logAccess() {
-    print("Proxy: Logging the time of request.");
+    print("Proxy: 写一些日志比如连接时间");
   }
 }
 
