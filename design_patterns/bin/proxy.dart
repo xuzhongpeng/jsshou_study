@@ -5,6 +5,7 @@ abstract class Subject {
 }
 
 class RealSubject implements Subject {
+  const RealSubject();
   @override
   void request() {
     print("RealSubject:Handling request");
@@ -35,22 +36,24 @@ class RunProxy implements Run {
   @override
   void main() {
     print('Client: Executing the client code with a real subject:');
-const realSubject = new RealSubject();
-_clientCode(realSubject);
+    const realSubject = new RealSubject();
+    _clientCode(realSubject);
 
-print('');
+    print('');
 
-print('Client: Executing the same client code with a proxy:');
-const proxy = new ReactiveProxy(realSubject);
-_clientCode(proxy);
+    print('Client: Executing the same client code with a proxy:');
+    const proxy = new ReactiveProxy(realSubject);
+    _clientCode(proxy);
   }
+
   _clientCode(Subject subject) {
     // ...
 
     subject.request();
 
     // ...
-}
+  }
+
   @override
   String name = "代理模式";
 }
