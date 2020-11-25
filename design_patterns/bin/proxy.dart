@@ -47,7 +47,7 @@ class RunProxy implements Run {
 
   _clientCode(Subject subject) {
     // ...
-    print('做一些连接前的事情')
+    print('做一些连接前的事情');
     subject.request();
 
     // ...
