@@ -534,7 +534,12 @@ treeNode = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(9)))
 # print(s.isSameTree(target,treeNode))
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
-        print()
+        def dfs(node, par = None):
+            if node:
+                print(node.val)
+                dfs(node.left, node)
+                dfs(node.right, node)
+        dfs(root)
 
 s=Solution()
 target = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4)))
