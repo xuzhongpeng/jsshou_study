@@ -536,10 +536,13 @@ class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         def dfs(node, par = None):
             if node:
-                print(node.val)
+                if node is None:
+                    return
+                node.left,node.right=node.rignht,node.left
                 dfs(node.left, node)
                 dfs(node.right, node)
         dfs(root)
+        return root
 
 s=Solution()
 target = TreeNode(5, TreeNode(6,TreeNode(1),TreeNode(9)), TreeNode(2, TreeNode(7), TreeNode(4)))
