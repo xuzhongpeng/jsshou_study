@@ -542,7 +542,7 @@ class Solution:
                 dfs(node.left, node)
                 dfs(node.right, node)
         dfs(root)
-        return invertTree1(root)
+        self.invertTree1(root)
     def invertTree1(self, root: TreeNode) -> TreeNode:
         def dfs(node, par = None):
             if node:
