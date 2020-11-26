@@ -537,8 +537,8 @@ class Solution:
         if root is None:
             return
         root.left,root.right=root.right,root.left
-        self.invertTree(root.left, root)
-        self.invertTree(root.right, root)
+        self.invertTree(root.left)
+        self.invertTree(root.right)
         # return root
         self.invertTree1(root)
     def invertTree1(self, root: TreeNode) -> TreeNode:
