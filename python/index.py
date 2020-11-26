@@ -531,4 +531,12 @@ class Solution:
 s= Solution()
 target = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4)))
 treeNode = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(9)))
-print(s.isSameTree(target,treeNode))
+# print(s.isSameTree(target,treeNode))
+class Solution:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        print()
+
+s=Solution()
+target = TreeNode(5, TreeNode(6), TreeNode(2, TreeNode(7), TreeNode(4)))
+treeNode = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(9)))
+print(s.invertTree(target))
