@@ -538,7 +538,7 @@ class Solution:
             if node:
                 if node is None:
                     return
-                node.left,node.right=node.rignht,node.left
+                node.left,node.right=node.right,node.left
                 dfs(node.left, node)
                 dfs(node.right, node)
         dfs(root)
