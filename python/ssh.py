@@ -17,4 +17,4 @@ def ssh_command(ip, user, passwd, command):
     return
 
 
-ssh_command('192.168.1.99', 'kali', 'lovepython', 'id')
+ssh_command('192.168.1.99', 'coding', '', 'ls')
