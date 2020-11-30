@@ -6,7 +6,7 @@ def ssh_command(ip, user, passwd, command):
     #创建客户端对象
     client = paramiko.SSHClient()
     #保存目标服务器的SSH密钥
-    client.set_missing_host_key_policy('/home/xy/.ssh/known_hosts')
+    client.set_missing_host_key_policy('~/.ssh/known_hosts')
     # 使用帐号密码方式认证
     client.connect(ip, username=user, password=passwd)
     ssh_session = client.get_transport().open_session()
