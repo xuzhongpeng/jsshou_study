@@ -1,4 +1,4 @@
-import paramiko
+from paramiko import paramiko
 
 #功能：连接到linux的ssh服务器并运行一条命令
 #认证方式使用帐号密码
