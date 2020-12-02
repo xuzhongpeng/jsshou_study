@@ -2,6 +2,6 @@
 using namespace std;//c++命名空间
 int main()  //c++主函数,是程序执行的起点
 {
-    cout << "Hello world!""n"; 
+    cout<<"Hello world!""n"; 
     return 0; //return 通常用于函数中,作为一个函数返回值!
 }
