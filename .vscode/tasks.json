@@ -3,7 +3,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "task g++",    //修改此项
+            "label": "Compile",    //修改此项
             "command": "D:\\2Software\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
