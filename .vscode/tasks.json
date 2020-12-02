@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "Compile",    //修改此项
-            "command": "D:\\2Software\\mingw64\\bin\\g++.exe",
+            "command": "g++.exe",
             "args": [
                 "-g",
                 "${file}",
