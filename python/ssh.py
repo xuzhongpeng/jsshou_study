@@ -10,8 +10,9 @@ def ssh_command(ip, user, passwd, command):
     hostkeys.load('/Users/admin/.ssh/known_hosts')
     #保存目标服务器的SSH密钥
     # client.set_missing_host_key_policy(RejectPolicy())
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     # 使用帐号密码方式认证
-    client.connect(ip, username=user, password=passwd, hostkeys=hostkeys)
+    client.connect(ip, username=user, password=passwd)
     ssh_session = client.get_transport().open_session()
     if ssh_session.active:
         #执行命令
