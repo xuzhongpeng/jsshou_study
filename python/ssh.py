@@ -17,4 +17,4 @@ def ssh_command(ip, user, passwd, command):
     return
 
 
-ssh_command('192.168.1.99', 'coding', '', 'ls')
+ssh_command('192.168.1.99', 'coding', '4000858853', 'ls')
