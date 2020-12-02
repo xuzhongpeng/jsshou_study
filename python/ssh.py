@@ -18,9 +18,7 @@ def ssh_command(ip, user, passwd, command):
         #执行命令
         ssh_session.exec_command(command)
         print(ssh_session.recv(1024))
-        ssh_session.exec_command('pwd')
-        print(ssh_session.recv(1024))
     return
 
 
-ssh_command('192.168.1.99', 'coding', '4000858853', 'ls')
+ssh_command('192.168.1.99', 'coding', '4000858853', 'pwd')
