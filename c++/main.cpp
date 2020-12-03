@@ -13,6 +13,7 @@
 
 int main() {
     printf("hello world!");
+    int a= 123;
     getchar(); 
     return 0; 
 }
