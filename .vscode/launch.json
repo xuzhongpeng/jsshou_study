@@ -18,6 +18,17 @@
       "preLaunchTask": "c++"
     },
     {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug",
+      //"program": "${workspaceFolder}/test.out",
+      //上一行是官方写法，但是不同的cpp调试都要改配置，非常麻烦
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build with Clang"
+  }
+    {
       "name": "windows Launch", // 配置名称，将会在启动配置的下拉菜单中显示
       "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
       "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）
