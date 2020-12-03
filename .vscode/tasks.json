@@ -21,7 +21,7 @@
       "label": "c++",
       "command": "clang++",
       "type": "shell",
-      "args": ["./c++/hello.cpp", "-std=c++11", "-g"],
+      "args": ["-g", "${file}", "-std=c++11", "-g"],
       "presentation": {
         "echo": true,
         "reveal": "always",
