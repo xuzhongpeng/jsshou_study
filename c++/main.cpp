@@ -51,8 +51,12 @@ int main()           //c++主函数,是程序执行的起点
     cout << "\t最大值：" << (numeric_limits<size_t>::max)();  
     cout << "\t最小值：" << (numeric_limits<size_t>::min)() << endl;  
     cout << "string: \t" << "所占字节数：" << sizeof(string) << endl;  
-    cout << "\t最大值：" << (numeric_limits<string>::max)() << "\t最小值：" << (numeric_limits<string>::min)() << endl;  
+    // cout << "\t最大值：" << (numeric_limits<string>::max)() << "\t最小值：" << (numeric_limits<string>::min)() << endl;  
     cout << "type: \t\t" << "************size**************"<< endl;  
+
+    enum color { red, green, blue } c;
+    c = blue;
+    cout << c << endl;
     // system("pause");
 }
 // #include<stdio.h>
