@@ -37,7 +37,7 @@
         "-std=c++17",
         "-stdlib=libc++",
         //"test.cpp",这里是官方写法，不具有普遍性，注意两个配置文件的统一性即可
-        "${fileBasenameNoExtension}.cpp",
+        "c++/${fileBasenameNoExtension}.cpp",
         "-o",
         //"test.out",
         "${fileBasenameNoExtension}",
