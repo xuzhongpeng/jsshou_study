@@ -18,6 +18,23 @@
                 "$gcc"
             ],
             "group": "build"
+        },{
+            "type": "shell",
+            "label": "Compile1",    //修改此项
+            "command": "D:\\code\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "D:\\code\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
         }
     ]
 }
