@@ -27,7 +27,7 @@
       "args": [],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "Build with Clang"
-  }
+  },
     {
       "name": "windows Launch", // 配置名称，将会在启动配置的下拉菜单中显示
       "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
