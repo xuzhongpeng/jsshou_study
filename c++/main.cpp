@@ -3,8 +3,9 @@
 using namespace std; //c++命名空间
 int main()           //c++主函数,是程序执行的起点
 {
-
-    cout << "我草\n";
+    #if 0
+        cout << "我草\n";
+    #endif
     char name[50];
     cout << "请输入您的名称： ";
     cin >> name;
