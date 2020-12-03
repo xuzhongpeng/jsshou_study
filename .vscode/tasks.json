@@ -21,7 +21,7 @@
         },{
             "type": "shell",
             "label": "Compile1",    //修改此项
-            "command": "D:\\code\\mingw64\\bin\\g++.exe",
+            "command": "/usr/bin/g++",
             "args": [
                 "-g",
                 "${file}",
