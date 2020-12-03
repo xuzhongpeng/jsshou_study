@@ -3,7 +3,7 @@
 using namespace std; //c++命名空间
 int main()           //c++主函数,是程序执行的起点
 {
-    #if 0
+    #if 1
         cout << "我草\n";
     #endif
     char name[50];
