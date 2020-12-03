@@ -5,7 +5,7 @@ int main()           //c++主函数,是程序执行的起点
 {
     //注释
     #if 1
-        cout << "我草\n";
+        cout << "我草\n" << endl;
     #endif
     cout <<"查看当前操作系统中 类型所占字节数\n";
     cout << "bool: \t\t" << "所占字节数：" << sizeof(bool);  
