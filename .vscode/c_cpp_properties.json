@@ -6,6 +6,7 @@
         "${workspaceFolder}/**",
         "/Library/Developer/CommandLineTools/usr/include/c++/v1",
         "/usr/local/include",
+        "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include",
         "/Library/Developer/CommandLineTools/usr/include"
       ],
       "defines": [],
