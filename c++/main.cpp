@@ -1,11 +1,11 @@
-#include<iostream> //±ê×¼ÊäÈëÊä³öÁ÷¿â
+#include<iostream> //æ ‡å‡†è¾“å…¥è¾“å‡ºæµåº“
 #include<stdlib.h> //
-using namespace std;//c++ÃüÃû¿Õ¼ä
-int main()  //c++Ö÷º¯Êı,ÊÇ³ÌĞòÖ´ĞĞµÄÆğµã
+using namespace std;//c++å‘½åç©ºé—´
+int main()  //c++ä¸»å‡½æ•°,æ˜¯ç¨‹åºæ‰§è¡Œçš„èµ·ç‚¹
 {
    char name[50];
-   cout << "ÇëÊäÈëÄúµÄÃû³Æ£º ";
+   cout << "è¯·è¾“å…¥æ‚¨çš„åç§°ï¼š ";
    cin >> name;
-   cout << "ÄúµÄÃû³ÆÊÇ£º " << name << endl;
+   cout << "æ‚¨çš„åç§°æ˜¯ï¼š " << name << endl;
    system("pause");
 }
