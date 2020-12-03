@@ -3,10 +3,11 @@
 using namespace std; //c++命名空间
 int main()           //c++主函数,是程序执行的起点
 {
+    //注释
     #if 1
         cout << "我草\n";
     #endif
-    char name[50];
+    cout <<"查看当前操作系统中 类型所占字节数\n";
     cout << "bool: \t\t" << "所占字节数：" << sizeof(bool);  
     cout << "\t最大值：" << (numeric_limits<bool>::max)();  
     cout << "\t\t最小值：" << (numeric_limits<bool>::min)() << endl;  
