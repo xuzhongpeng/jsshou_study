@@ -53,7 +53,6 @@ int main()           //c++主函数,是程序执行的起点
     cout << "string: \t" << "所占字节数：" << sizeof(string) << endl;  
     // << "\t最大值：" << (numeric_limits<string>::max)() << "\t最小值：" << (numeric_limits<string>::min)() << endl;  
     cout << "type: \t\t" << "************size**************"<< endl;  
-    cout << "请输入您的名称： ";
     // system("pause");
 }
 // #include<stdio.h>
