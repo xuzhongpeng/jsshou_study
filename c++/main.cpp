@@ -13,8 +13,6 @@
 
 int main() {
     printf("hello world!");
-    int a= 1123;
-    printf(a);
     getchar(); 
     return 0; 
 }
