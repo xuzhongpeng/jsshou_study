@@ -19,7 +19,7 @@
     },
     {
       "label": "c++",
-      "command": "clang++",
+      "command": "c++",
       "type": "shell",
       "args": ["-g", "${file}", "-std=c++11"],
       "presentation": {
