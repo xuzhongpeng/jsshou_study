@@ -18,18 +18,6 @@
       "group": "build"
     },
     {
-      "label": "c++",
-      "command": "c++",
-      "type": "shell",
-      "args": ["-g", "${file}", "-std=c++11"],
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared"
-      }
-    },
-    {
       "label": "Build", //这个任务的名字在launch.json最后一项配置
       "type": "shell",
       "command": "clang++",

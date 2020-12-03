@@ -16,6 +16,7 @@
   "noteSync.finishStatusMessage": "笔记同步完成",
   "python.pythonPath": "/usr/bin/python3",
   "files.associations": {
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "limits": "cpp"
   },
 }
