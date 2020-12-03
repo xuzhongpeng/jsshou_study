@@ -29,7 +29,7 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "D:\\code\\mingw64\\bin"
+                "cwd": "/usr/bin/"
             },
             "problemMatcher": [
                 "$gcc"
