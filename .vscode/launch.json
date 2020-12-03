@@ -8,7 +8,7 @@
       "name": "c/c++ Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/c++/a.out",
+      "program": "${workspaceFolder}/a.out",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
