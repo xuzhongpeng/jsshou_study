@@ -54,9 +54,7 @@ int main()           //c++主函数,是程序执行的起点
     // << "\t最大值：" << (numeric_limits<string>::max)() << "\t最小值：" << (numeric_limits<string>::min)() << endl;  
     cout << "type: \t\t" << "************size**************"<< endl;  
     cout << "请输入您的名称： ";
-    cin >> name;
-    cout << "您的名称是： " << name << endl;
-    system("pause");
+    // system("pause");
 }
 // #include<stdio.h>
 
