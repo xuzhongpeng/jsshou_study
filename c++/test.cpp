@@ -42,4 +42,5 @@ int main ()
       }
    }
    pthread_exit(NULL);
+   system("pause");
 }
