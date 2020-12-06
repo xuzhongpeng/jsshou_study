@@ -10,13 +10,10 @@ using namespace std;
 void *wait(long *t)
 {
    int i;
-   long tid;
- 
-   tid = t;
  
    sleep(1);
    cout << "Sleeping in thread " << endl;
-   cout << "Thread with id : " << tid << "  ...exiting " << endl;
+   cout << "Thread with id : " << &t << "  ...exiting " << endl;
    pthread_exit(NULL);
 }
  
