@@ -12,7 +12,7 @@ void *wait(long *t)
    int i;
    long tid;
  
-   tid = (long)t;
+   tid = t;
  
    sleep(1);
    cout << "Sleeping in thread " << endl;
