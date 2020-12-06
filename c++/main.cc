@@ -7,7 +7,7 @@ using namespace std;
  
 #define NUM_THREADS     5
  
-void *wait(long *t)
+void *wait(void *t)
 {
    int i;
  
