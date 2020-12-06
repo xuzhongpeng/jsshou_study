@@ -17,6 +17,8 @@
     "tchayen.markdown-links",
     // Understated grayscale theme (light and dark variants)
     "philipbe.theme-gray-matter",
-    "pucelle.run-on-save"
+    "pucelle.run-on-save",
+    //调试c的插件
+    "vadimcn.vscode-lldb",
   ]
 }
