@@ -10,7 +10,7 @@
       "name": "mac Debug C++",
       //"program": "${workspaceFolder}/test.out",
       //上一行是官方写法，但是不同的cpp调试都要改配置，非常麻烦
-      "program": "${workspaceFolder}/${fileBasenameNoExtension}.out",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
       "args": [],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "Build"
@@ -19,7 +19,7 @@
       "name": "windows Launch", // 配置名称，将会在启动配置的下拉菜单中显示
       "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
       "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）
-      "program": "${fileDirname}/${fileBasenameNoExtension}.exe", // 将要进行调试的程序的路径
+      "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe", // 将要进行调试的程序的路径
       "args": [], // 程序调试时传递给程序的命令行参数，一般设为空即可
       "stopAtEntry": false, // 设为true时程序将暂停在程序入口处，相当于在main上打断点
       "cwd": "${workspaceFolder}", // 调试程序时的工作目录，此为工作区文件夹；改成${fileDirname}可变为文件所在目录
