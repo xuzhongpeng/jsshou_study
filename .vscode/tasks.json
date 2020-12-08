@@ -28,7 +28,7 @@
         "c++/${fileBasenameNoExtension}.cpp",
         "-o",
         //"test.out",
-        "${fileBasenameNoExtension}.out",
+        "build/${fileBasenameNoExtension}.out",
         "--debug"
       ],
       "group": {
