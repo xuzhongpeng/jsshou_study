@@ -3,4 +3,4 @@
 # .vscode/
 .dart_tool
 *.exe
-*.
+*.dSYM
