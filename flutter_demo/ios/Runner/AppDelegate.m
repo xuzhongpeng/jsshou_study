@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
 #import "./GeneratedPluginRegistrant.h"
 #import "./PlatformView1.h"
-#import <package_info/PackageInfoPlugin.h>
+// #import <package_info/PackageInfoPlugin.h>
 // #import "MyFlutterRouter.h"
 // #import "ViewController.h"
 // #import <flutter_boost/FlutterBoost.h>

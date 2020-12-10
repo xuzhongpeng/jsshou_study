@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/mvvn/mvvm.dart';
 import 'package:flutter_demo/platform/platform.dart';
 import 'package:flutter_demo/render_object/render_object.dart';
 import './provider/index.dart';
@@ -42,6 +43,7 @@ class StartPageState extends State<StartPage> {
   }
 
   Map<String, WidgetBuilder> routes = {
+    'MVVM': (_) => Mvvm(),
     'provider': (_) => MyProvider(),
     'stream': (_) => CounterPage(),
     'inherit': (_) => MyInherit(),
