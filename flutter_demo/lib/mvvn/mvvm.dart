@@ -1,14 +1,10 @@
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:dio/adapter.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/components/menu_list.dart';
+import 'package:flutter_demo/mvvn/project/apollo/graphql_flutter_demo.dart';
+import 'package:flutter_demo/mvvn/project/graphql/graphql_client.dart';
+import 'package:flutter_demo/mvvn/project/graphql_demo.dart';
 import 'package:graphql/client.dart';
-import 'package:http/http.dart';
-import 'package:http/src/io_client.dart';
-
-import 'rxdart.dart';
+import 'project/redux/item/item_state.dart';
 
 class Mvvm extends StatefulWidget {
   @override
@@ -16,30 +12,34 @@ class Mvvm extends StatefulWidget {
 }
 
 class _MvvmState extends State<Mvvm> {
+  @override
+  void initState() {
+    super.initState();
+    GQClient.init();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("各种demo"),
+      ),
+      body: MenuList(
+        routes: {
+          "redux": (_) => GraphqlDemo(),
+          "graphql_flutter": (_) => GraphqlFlutterDemo()
+        },
+      ),
+    );
+  }
+}
+
+class _MvvmState1 extends State<Mvvm> {
   GraphQLClient _client;
   final int nRepositories = 50;
   @override
   void initState() {
     super.initState();
-    HttpClient _httpClient = HttpClient()
-      ..findProxy = (uri) {
-        return "PROXY 127.0.0.1:8888";
-      };
-    final cache = InMemoryCache();
-    Client client = IOClient(_httpClient);
-
-    HttpLink _httpLink =
-        HttpLink(uri: 'http://192.168.1.72:5000/graphql', httpClient: client);
-
-    final AuthLink _authLink = AuthLink(
-      getToken: () async => '',
-    );
-
-    Link _link = _authLink.concat(_httpLink);
-    _client = GraphQLClient(
-      cache: cache,
-      link: _link,
-    );
+    _client = GQClient.init();
   }
 
   List<Item> result = [];
@@ -77,7 +77,7 @@ class _MvvmState extends State<Mvvm> {
                       final QueryOptions options = QueryOptions(
                           documentNode: gql(readRepositories),
                           variables: <String, dynamic>{"id": r.id},
-                          fetchPolicy: FetchPolicy.noCache);
+                          fetchPolicy: FetchPolicy.cacheOnly);
                       print("ddd");
                       final QueryResult result = await _client.query(options);
 
@@ -149,7 +149,7 @@ class _MvvmState extends State<Mvvm> {
                 print(result.exception.toString());
               }
 
-              setResult(result.data['createItem']);
+              // setResult(result.data['createItem']);
             },
           ),
           FlatButton(child: Text("删除数据"), onPressed: () async {})
@@ -158,34 +158,9 @@ class _MvvmState extends State<Mvvm> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (_) => RxDartDemo()));
+              .push(MaterialPageRoute(builder: (_) => GraphqlDemo()));
         },
       ),
     );
-  }
-}
-
-class Item {
-  int id;
-  int itemRef;
-  String name;
-  bool show;
-
-  Item({this.id, this.itemRef, this.name, this.show});
-
-  Item.fromJson(Map<String, dynamic> json) {
-    id = int.tryParse(json['id'] ?? '');
-    itemRef = int.tryParse(json['item_ref'] ?? '');
-    name = json['name'];
-    show = json['show'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['item_ref'] = this.itemRef;
-    data['name'] = this.name;
-    data['show'] = this.show;
-    return data;
   }
 }

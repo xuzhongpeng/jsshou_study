@@ -1,6 +1,19 @@
 // import "package:lpinyin/lpinyin.dart";
+import 'dart:convert';
+
 import "./downfiles.dart";
-import 'getAst.dart';
+import 'dart_ast/getAst.dart';
+import 'fileManager.dart';
+import 'getFlutter.dart';
+
+String chart(List<int> items) {
+  return jsonEncode({
+    "kind": {"plotly": true},
+    'data': [
+      {'y': items}
+    ]
+  });
+}
 
 void main() {
   // List<String> a = ['测试', 'D白', '2da', '1大发', 'aaa', 'CCC'];
@@ -13,7 +26,17 @@ void main() {
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
 
-  getAst();
+  final items = <int>[];
+  while (true) {
+    items
+      ..clear()
+      ..addAll([1, 5, 4, 3, 6, 7, 9]);
+    items.sort();
+  }
+
+  // getAstTest();
+
+  // FileManager().getAllFilesPath();
 
   // DownFiles().loadFiles(
   //     "https://gunma-app.oss-cn-hangzhou.aliyuncs.com/303/duoke-settings-v1.2.29.zip",

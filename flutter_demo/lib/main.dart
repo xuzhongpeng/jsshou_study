@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/mvvn/project/graphql_demo.dart';
 import 'package:flutter_demo/mvvn/mvvm.dart';
 import 'package:flutter_demo/platform/platform.dart';
 import 'package:flutter_demo/render_object/render_object.dart';
@@ -21,6 +22,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import './intl/intl.dart';
 import './intl/translations.dart';
 import './single_page/back.dart';
+import 'components/menu_list.dart';
 // import 'package:git_hooks/git_hooks.dart';
 
 main() async {
@@ -55,9 +57,7 @@ class StartPageState extends State<StartPage> {
     'Intl': (_) => Intl(),
     'platformView': (_) => UIActivityIndicator(),
     "Widget、Element、RenderObject": (_) => RenderObjectDemo(),
-    "redux": (_) => FlutterReduxApp(
-          store: new Store<int>(counterReducer, initialState: 0),
-        ),
+    "redux": (_) => ReduxPage(),
     "物理返回测试": (_) => BackPage()
   };
   @override
@@ -103,27 +103,8 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('FirstPage'),
       ),
-      body: Center(
-        child: ListView(
-          children: [
-            ...routes.keys.map((route) {
-              return GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed(route);
-                },
-                child: Container(
-                  height: 60,
-                  decoration: BoxDecoration(
-                      border:
-                          Border(bottom: BorderSide(color: Colors.grey[500]))),
-                  child: Center(
-                    child: Text(route),
-                  ),
-                ),
-              );
-            }).toList(),
-          ],
-        ),
+      body: MenuList(
+        routes: routes,
       ),
     );
   }

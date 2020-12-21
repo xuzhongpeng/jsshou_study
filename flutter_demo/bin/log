@@ -1,0 +1,61 @@
+initial value:
+void main(arguments) {Tools tools = Tools(); tools.print("👍🏻");} class Tools {print(String test) {print(test);}}
+visitSimpleIdentifier:void
+void
+visitTypeName:void
+visitSimpleIdentifier:main
+main
+visitSimpleIdentifier:arguments
+arguments
+visitSimpleFormalParameter:arguments
+visitFormalParameterList:(arguments)
+visitSimpleIdentifier:Tools
+Tools
+visitTypeName:Tools
+visitSimpleIdentifier:tools
+tools
+visitSimpleIdentifier:Tools
+Tools
+visitArgumentList:()
+visitMethodInvocation:Tools()
+visitVariableDeclaration:tools = Tools()
+visitVariableDeclarationList:Tools tools = Tools()
+visitVariableDeclarationStatement:Tools tools = Tools();
+visitSimpleIdentifier:tools
+tools
+visitSimpleIdentifier:print
+print
+visitSimpleStringLiteral:"👍🏻"
+visitArgumentList:("👍🏻")
+visitMethodInvocation:tools.print("👍🏻")
+visitExpressionStatement:tools.print("👍🏻");
+visitBlock:{Tools tools = Tools(); tools.print("👍🏻");}
+visitBlockFunctionBody:{Tools tools = Tools(); tools.print("👍🏻");}
+visitFunctionExpression:(arguments) {Tools tools = Tools(); tools.print("👍🏻");}
+visitFunctionDeclaration:void main(arguments) {Tools tools = Tools(); tools.print("👍🏻");}
+visitSimpleIdentifier:Tools
+Tools
+visitSimpleIdentifier:print
+print
+visitSimpleIdentifier:String
+String
+visitTypeName:String
+visitSimpleIdentifier:test
+test
+visitSimpleFormalParameter:String test
+visitFormalParameterList:(String test)
+visitSimpleIdentifier:print
+print
+visitSimpleIdentifier:test
+test
+visitArgumentList:(test)
+visitMethodInvocation:print(test)
+visitExpressionStatement:print(test);
+visitBlock:{print(test);}
+visitBlockFunctionBody:{print(test);}
+visitMethodDeclaration:print(String test) {print(test);}
+visitClassDeclaration:class Tools {print(String test) {print(test);}}
+Tools
+After modification:
+void main(arguments) {Tools tools = Tools(); tools.print("👍🏻");} class Tools {print(String test) {print(test);}}
+Exited

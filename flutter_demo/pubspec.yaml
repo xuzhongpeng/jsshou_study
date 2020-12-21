@@ -35,12 +35,16 @@ dependencies:
   #     url: https://github.com/google/charts.git
   #     ref: master
   #     path: charts_flutter/example
-  flutter_redux: 0.5.3
+  flutter_redux: ^0.7.0
+  redux_thunk: ^0.3.0
+  redux_saga: ^2.0.0
+  
   scoped_model: 1.0.1
-  path_provider: 0.4.1
+  # path_provider: 0.4.1
   package_info: ^0.4.0
   flutter_boost: 1.12.13+3
   graphql: 3.1.0
+  graphql_flutter: 3.1.0
   # logger: ^0.7.0+2
   # sentry: 2.2.0
   #  path: ../flutter_redux/
