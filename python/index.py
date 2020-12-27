@@ -562,10 +562,13 @@ class Solution:
 
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        result = 1
+        result = 0
         add = 0
         while True:
-            add = divisor
+            add += divisor 
+            if add > dividend:
+                return result
+            result += 1
 
 s=Solution()
 print(s.divide(10,3))
