@@ -558,3 +558,11 @@ s=Solution()
 target = TreeNode(5, TreeNode(6,TreeNode(1),TreeNode(9)), TreeNode(2, TreeNode(7), TreeNode(4)))
 treeNode = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(9)))
 print(s.invertTree(target))
+
+
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        for(divisor in divisor)        
+
+s=Solution()
+print(s.divide(10,3))
