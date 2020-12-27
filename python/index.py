@@ -562,7 +562,7 @@ print(s.invertTree(target))
 
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        for(divisor in divisor)        
+        divisor in divisor:
 
 s=Solution()
 print(s.divide(10,3))
