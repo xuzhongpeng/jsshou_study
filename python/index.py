@@ -565,7 +565,7 @@ class Solution:
         r = re.search('^((?!0)\d+\.){3}\d+$', IP)
         if r:
             return 'IPv4'
-        r = re.search('^((\d|[a-f])+:){7}(\d|[a-f])+$',IP)
+        r = re.search('^((\d|[a-f]|[A-F])+:){7}(\d|[a-f]|[A-F])+$',IP)
         if r:
             return 'IPv6'
         return 'Neither'
