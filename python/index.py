@@ -561,14 +561,7 @@ class Solution:
 
 
 class Solution:
-    def divide(self, dividend: int, divisor: int) -> int:
-        result = 0
-        add = 0
-        while True:
-            add += divisor 
-            if add > dividend:
-                return result
-            result += 1
-
+    def validIPAddress(self, IP: str) -> str:
+        
 s=Solution()
-print(s.divide(10,3))
+print(s.divide("172.16.254.1"))
