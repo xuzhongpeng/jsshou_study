@@ -562,7 +562,7 @@ class Solution:
 import re
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        r = re.search('^(^(?!0)\d+\.){3}\d+$', IP)
+        r = re.search('^((?!0)\d+\.){3}\d+$', IP)
         if r:
             return 'IPv4'
         r = re.search('^\w+$',IP)
@@ -570,4 +570,4 @@ class Solution:
             return 'IPv6'
         return 'Neither'
 s=Solution()
-print(s.validIPAddress("172.16.154.1"))
+print(s.validIPAddress("172.06.154.1"))
