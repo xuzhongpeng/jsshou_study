@@ -565,9 +565,9 @@ class Solution:
         r = re.search('^(\d+\.){3}\d+$', IP)
         if r:
             return 'IPv4'
-        r = re.search('^$')
+        r = re.search('^\w+$')
         if r:
             return 'IPv6'
         return 'Neither'
 s=Solution()
-print(s.validIPAddress("172.16.254.1"))
+print(s.validIPAddress("172.16.054.1"))
