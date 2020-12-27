@@ -562,7 +562,7 @@ class Solution:
 
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        for d in divisor:
+        for d in enumerate(divisor):
             print(d)
 
 s=Solution()
