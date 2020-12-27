@@ -562,7 +562,7 @@ class Solution:
 import re
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        r = re.search('^((?!0)(\d|\d{2}|[1-2][0-5][0-5])\.){3}(\d+)$', IP)
+        r = re.search('^((\d|\d{2}|2[0-5][0-5]|1\d{2})\.){3}(\d|\d{2}|2[0-5][0-5]|1\d{2})$', IP)
         if r:
             return 'IPv4'
         r = re.search('^((\d|[a-f]|[A-F])+:){7}(\d|[a-f]|[A-F])+$',IP)
