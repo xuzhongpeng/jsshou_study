@@ -14,7 +14,6 @@
   "noteSync.pullStatusMessage": "笔记正在下拉",
   "noteSync.runningStatusMessage": "笔记正在同步",
   "noteSync.finishStatusMessage": "笔记同步完成",
-  "python.pythonPath": "/usr/bin/python3",
   "files.associations": {
     "ostream": "cpp",
     "limits": "cpp"
