@@ -570,4 +570,4 @@ class Solution:
             return 'IPv6'
         return 'Neither'
 s=Solution()
-print(s.divide("172.16.254.1"))
+print(s.validIPAddress("172.16.254.1"))
