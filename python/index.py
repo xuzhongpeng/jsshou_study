@@ -562,7 +562,7 @@ class Solution:
 import re
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        r = re.search('^{}$', IP)
+        r = re.search('^(\d+\.){3}\d+$', IP)
         if r:
             return 'IPv4'
         r = re.search('^$')
