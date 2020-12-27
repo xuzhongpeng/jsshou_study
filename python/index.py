@@ -559,9 +559,15 @@ class Solution:
 # treeNode = TreeNode(3, target, TreeNode(1, TreeNode(0), TreeNode(9)))
 # print(s.invertTree(target))
 
-
+import re
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        
+        r = re.search('^[a-z]+$', IP)
+        if r:
+            return 'IPv4'
+        r = re.search('^$')
+        if r:
+            return 'IPv6'
+        return 'Neither'
 s=Solution()
 print(s.divide("172.16.254.1"))
