@@ -562,13 +562,13 @@ class Solution:
 import re
 class Solution:
     def validIPAddress(self, IP: str) -> str:
-        r = re.search('^((?!0)(\d|\d{2}|2[0-5][0-5]|1\d{2})\.){3}(?!0)(\d|\d{2}|2[0-5][0-5]|1\d{2})$', IP)
+        r = re.search('^((\d|[1-9]\d|2[0-5][0-5]|1\d{2})\.){3}(\d|[1-9]\d|2[0-5][0-5]|1\d{2})$', IP)
         if r:
             return 'IPv4'
-        r = re.search('^((?!00)(\d|[a-f]|[A-F]){1,4}:){7}((?!00)(\d|[a-f]|[A-F]){1,4})$',IP)
+        r = re.search('^((\d|[a-f]|[A-F]){1,4}:){7}((\d|[a-f]|[A-F]){1,4})$',IP)
         if r:
             return 'IPv6'
         return 'Neither'
 s=Solution()
-# print(s.validIPAddress("172.06.154.1"))
-print(s.validIPAddress("2001:0db8:85a3:0:0:8A2E:0370:7334"))
+print(s.validIPAddress("219.219.219.219"))
+# print(s.validIPAddress("2001:0db8:85a3:0:0:8A2E:0370:7334"))
