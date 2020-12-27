@@ -571,4 +571,4 @@ class Solution:
         return 'Neither'
 s=Solution()
 # print(s.validIPAddress("172.06.154.1"))
-print(s.validIPAddress("256.256.256.256"))
+print(s.validIPAddress("255.255.255.255"))
