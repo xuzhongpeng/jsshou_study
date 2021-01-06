@@ -8,7 +8,6 @@ def sendMessage():
 def dojob():
     # 创建调度器：BlockingScheduler
     scheduler = BlockingScheduler()
-    forget()
     scheduler.add_job(
-        forget, CronTrigger.from_crontab('0,30 20-22 * * 0-6'))
+        sendMessage, CronTrigger.from_crontab('0,30 20-22 * * 0-6'))
     scheduler.start()
