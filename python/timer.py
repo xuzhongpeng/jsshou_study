@@ -1,10 +1,10 @@
 from subprocess import call
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-
-cmd = 'display notification \"' + \
+def sendMessage():
+    cmd = 'display notification \"' + \
     "Notificaton memo" + '\" with title \"Titile\"'
-call(["osascript", "-e", cmd])
+    call(["osascript", "-e", cmd])
 def dojob():
     # 创建调度器：BlockingScheduler
     scheduler = BlockingScheduler()
