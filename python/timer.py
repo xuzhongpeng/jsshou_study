@@ -11,3 +11,4 @@ def dojob():
     scheduler.add_job(
         sendMessage, CronTrigger.from_crontab('0,30 20-22 * * 0-6'))
     scheduler.start()
+sendMessage()
