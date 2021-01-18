@@ -54,10 +54,16 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "Dart",
+      "name": "Dart_Patterns",
       "type": "dart",
       "request": "launch",
       "program": "design_patterns/bin/main.dart"
+    },
+    {
+      "name": "Dart_Flutter_Bin",
+      "type": "dart",
+      "request": "launch",
+      "program": "flutter_demo/bin/main.dart"
     }
   ]
 }
