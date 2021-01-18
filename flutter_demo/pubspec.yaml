@@ -93,3 +93,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+builders:
+  reflectable:
+    defaults:
+      generate_for:
+        include:
+        - bin/main.dart
