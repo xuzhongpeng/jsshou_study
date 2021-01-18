@@ -45,6 +45,7 @@ dependencies:
   flutter_boost: 1.12.13+3
   graphql: 3.1.0
   graphql_flutter: 3.1.0
+  reflectable: any
   # logger: ^0.7.0+2
   # sentry: 2.2.0
   #  path: ../flutter_redux/
