@@ -28,8 +28,11 @@ void main() {
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
   
-  initializeReflectable();
-  testReflection();
+  // initializeReflectable();
+  // testReflection();
+   Uri uri = Uri.tryParse(Uri.decodeFull(staffVo.qrCodeImg));
+
+      String key = uri?.queryParameters['text'];
 
   // getAstTest();
 
