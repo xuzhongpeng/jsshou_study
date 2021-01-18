@@ -1,0 +1,6 @@
+builders:
+  reflectable:
+    defaults:
+      generate_for:
+        include:
+          - bin/main.dart
