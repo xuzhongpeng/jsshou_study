@@ -1,13 +1,3 @@
-
-# Visual Studio Code related
-# .vscode/
-.dart_tool
-*.exe
-*.out
-*.dSYM
-build
-
-# android
 *.iml
 .gradle
 /local.properties
