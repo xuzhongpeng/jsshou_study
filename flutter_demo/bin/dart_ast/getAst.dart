@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:analyzer/dart/ast/standard_ast_factory.dart';
 import 'package:analyzer/analyzer.dart';
-import 'package:front_end/src/scanner/token.dart';
+// import 'package:front_end/src/scanner/token.dart';
 
 List<String> classNames = [];
 getAstTest() {
