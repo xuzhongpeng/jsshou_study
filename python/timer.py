@@ -8,7 +8,6 @@ def sendMessage(title: str, content: str):
         content + '\" with title \"'+title+'\"'
     call(["osascript", "-e", cmd])
 
-
 # def dojob():
 #     # 创建调度器：BlockingScheduler
 #     scheduler = BlockingScheduler()
