@@ -49,8 +49,8 @@ dependencies:
   # logger: ^0.7.0+2
   # sentry: 2.2.0
   #  path: ../flutter_redux/
-# dependency_overrides:
-#   charts_flutter: 0.8.0
+dependency_overrides:
+  meta: 1.1.8
 dev_dependencies:
   flutter_test:
     sdk: flutter
