@@ -306,12 +306,12 @@ class Visitor<R> extends RecursiveAstVisitor {
     return null;
   }
 
-  @override
-  R visitForEachStatement(ForEachStatement node) {
-    node.visitChildren(this);
-    print("visitForEachStatement:" + node.toSource());
-    return null;
-  }
+  // @override
+  // R visitForEachStatement(ForEachStatement node) {
+  //   node.visitChildren(this);
+  //   print("visitForEachStatement:" + node.toSource());
+  //   return null;
+  // }
 
   @override
   R visitFormalParameterList(FormalParameterList node) {
@@ -488,12 +488,12 @@ class Visitor<R> extends RecursiveAstVisitor {
     return null;
   }
 
-  @override
-  R visitMapLiteral(MapLiteral node) {
-    node.visitChildren(this);
-    print("visitMapLiteral:" + node.toSource());
-    return null;
-  }
+  // @override
+  // R visitMapLiteral(MapLiteral node) {
+  //   node.visitChildren(this);
+  //   print("visitMapLiteral:" + node.toSource());
+  //   return null;
+  // }
 
   @override
   R visitMapLiteralEntry(MapLiteralEntry node) {
