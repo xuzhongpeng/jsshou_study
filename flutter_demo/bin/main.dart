@@ -36,7 +36,7 @@ void main() {
   Uri uri = Uri.tryParse(Uri.decodeQueryComponent(str));
 
   String key = uri?.queryParameters['text'];
-  key.replaceAll("replaceStr", "&");
+  key=key.replaceAll("replaceStr", "&");
   print(key);
   // getAstTest();
 
