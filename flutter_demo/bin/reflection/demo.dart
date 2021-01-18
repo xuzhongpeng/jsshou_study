@@ -38,4 +38,5 @@ test()
   });
   InstanceMirror instanceMirror = reflector.reflect(dic);
   instanceMirror.invokeSetter("index", 3);
+  print(dic.index);
 }
