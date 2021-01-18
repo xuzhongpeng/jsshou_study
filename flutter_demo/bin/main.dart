@@ -5,6 +5,7 @@ import "./downfiles.dart";
 import 'dart_ast/getAst.dart';
 import 'fileManager.dart';
 import 'getFlutter.dart';
+import 'reflection/demo.dart';
 
 String chart(List<int> items) {
   return jsonEncode({
@@ -26,13 +27,7 @@ void main() {
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
 
-  final items = <int>[];
-  while (true) {
-    items
-      ..clear()
-      ..addAll([1, 5, 4, 3, 6, 7, 9]);
-    items.sort();
-  }
+  testReflection();
 
   // getAstTest();
 
