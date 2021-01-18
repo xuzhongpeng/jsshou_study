@@ -8,17 +8,17 @@
 build
 
 # android
-/android/UI_*.iml
-/android/UI_.gradle
-/android/UI_/local.properties
-/android/UI_/.idea/caches
-/android/UI_/.idea/libraries
-/android/UI_/.idea/modules.xml
-/android/UI_/.idea/workspace.xml
-/android/UI_/.idea/navEditor.xml
-/android/UI_/.idea/assetWizardSettings.xml
-/android/UI_.DS_Store
-/android/UI_/build
-/android/UI_/captures
-/android/UI_.externalNativeBuild
-/android/UI_.cxx
+/android/ui_demo*.iml
+/android/ui_demo.gradle
+/android/ui_demo/local.properties
+/android/ui_demo/.idea/caches
+/android/ui_demo/.idea/libraries
+/android/ui_demo/.idea/modules.xml
+/android/ui_demo/.idea/workspace.xml
+/android/ui_demo/.idea/navEditor.xml
+/android/ui_demo/.idea/assetWizardSettings.xml
+/android/ui_demo.DS_Store
+/android/ui_demo/build
+/android/ui_demo/captures
+/android/ui_demo.externalNativeBuild
+/android/ui_demo.cxx
