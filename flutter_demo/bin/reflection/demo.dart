@@ -1,6 +1,6 @@
 import 'package:reflectable/mirrors.dart';
 import 'package:reflectable/reflectable.dart';
-import 'main.reflectable.dart'; // Import generated code.
+
 const reflector = const Reflector();
 
 class Reflector extends Reflectable {
