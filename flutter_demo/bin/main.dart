@@ -6,6 +6,8 @@ import 'dart_ast/getAst.dart';
 import 'fileManager.dart';
 import 'getFlutter.dart';
 import 'reflection/demo.dart';
+import 'reflectable.dart'; // Import generated code.
+import 'package:reflectable/reflectable.dart';
 
 String chart(List<int> items) {
   return jsonEncode({
@@ -27,6 +29,7 @@ void main() {
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
   
+  initializeReflectable();
   testReflection();
 
   // getAstTest();
