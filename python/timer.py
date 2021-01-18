@@ -1,7 +1,7 @@
 from subprocess import call
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
-def sendMessage():
+def sendMessage(title:str,content:str):
     cmd = 'display notification \"' + \
     "Notificaton memo" + '\" with title \"Titile\"'
     call(["osascript", "-e", cmd])
