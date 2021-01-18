@@ -31,7 +31,7 @@ void main() {
   // initializeReflectable();
   // testReflection();
   String str = "https://api2.mc.app/index.php/system/qr_code?text=%7B%22type%22%3A%22s_bind%22%2C%22data%22%3A%7B%22key%22%3A%2295487612%22%2C%22company_name%22%3A%22J%26W+FASHION+DI+YAN+XINING%22%7D%7D";
-  str.replaceAll("%26", "")
+  str.replaceAll("%26", "\${}");
    Uri uri = Uri.tryParse(Uri.decodeQueryComponent());
 
       String key = uri?.queryParameters['text'];
