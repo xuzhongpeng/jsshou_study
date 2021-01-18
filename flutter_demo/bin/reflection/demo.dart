@@ -23,6 +23,7 @@ main() {
 }
 
 testReflection() {
+  initializeReflectable();
   ClassMirror classMirror = reflector.reflectType(Dictionary);
   Dictionary dic = classMirror.newInstance("", []);
   classMirror.declarations.values.forEach((field) {
