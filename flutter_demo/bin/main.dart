@@ -26,7 +26,7 @@ void main() {
   // print(b.toString());
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
-  initializeReflectable();
+  // initializeReflectable();
   testReflection();
 
   // getAstTest();
