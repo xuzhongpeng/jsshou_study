@@ -3,33 +3,35 @@ import 'package:reflectable/reflectable.dart';
 
 const reflector = const Reflector();
 
-class Reflector extends Reflectable
-{
-  const Reflector() : super(
-    invokingCapability,
-    typingCapability,
-    reflectedTypeCapability,
-  );
+class Reflector extends Reflectable {
+  const Reflector()
+      : super(
+          invokingCapability,
+          typingCapability,
+          reflectedTypeCapability,
+        );
 }
 
 @reflector
-class Dictionary
-{
+class Dictionary {
   String english, myLang;
   int index;
 }
 
-main() { 
-   test(); 
+main() {
+  test();
 }
 
-test()
-{
+test() {
   ClassMirror classMirror = reflector.reflectType(Dictionary);
   Dictionary dic = classMirror.newInstance("", []);
-  classMirror.declarations.values.forEach((field)
-  {
+  classMirror.declarations.values.forEach((field) {
     VariableMirror variableMirror = field;
+    Type type = variableMirror.dynamicReflectedType;
+    print("field: " +
+        variableMirror.simpleName +
+        " has type: " +
+        type.toString());
     /*??????????????????????????????????????????
     Now How To Get Field types i.e. String & int
     How to instantiate class object
