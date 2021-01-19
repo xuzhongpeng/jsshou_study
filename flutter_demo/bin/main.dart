@@ -37,7 +37,6 @@ void main() {
 
   String key = uri?.queryParameters['text'];
   key=key.replaceAll("\${@}", "&");
-  key=key.replaceAll("\${~}", "?");
   print(key);
   // getAstTest();
 
