@@ -8,15 +8,16 @@ part of 'user.dart';
 
 Data _$DataFromJson(Map<String, dynamic> json) {
   return Data(
-      by: json['by'] as String,
-      descendants: json['descendants'] as int,
-      id: json['id'] as int,
-      kids: (json['kids'] as List)?.map((e) => e as int)?.toList(),
-      score: json['score'] as int,
-      time: json['time'] as int,
-      title: json['title'] as String,
-      type: json['type'] as String,
-      url: json['url'] as String);
+    by: json['by'] as String,
+    descendants: json['descendants'] as int,
+    id: json['id'] as int,
+    kids: (json['kids'] as List)?.map((e) => e as int)?.toList(),
+    score: json['score'] as int,
+    time: json['time'] as int,
+    title: json['title'] as String,
+    type: json['type'] as String,
+    url: json['url'] as String,
+  );
 }
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
@@ -28,5 +29,5 @@ Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
       'time': instance.time,
       'title': instance.title,
       'type': instance.type,
-      'url': instance.url
+      'url': instance.url,
     };

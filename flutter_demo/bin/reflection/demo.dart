@@ -26,12 +26,10 @@ testReflection() {
   ClassMirror classMirror = reflector.reflectType(Dictionary);
   Dictionary dic = classMirror.newInstance("", []);
   classMirror.declarations.values.forEach((field) {
-    VariableMirror variableMirror = field;
-    Type type = variableMirror.dynamicReflectedType;
     print("field: " +
-        variableMirror.simpleName +
+        field.simpleName +
         " has type: " +
-        type.toString());
+        field.toString());
     /*??????????????????????????????????????????
     Now How To Get Field types i.e. String & int
     How to instantiate class object
