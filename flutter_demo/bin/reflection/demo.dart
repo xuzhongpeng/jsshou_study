@@ -33,6 +33,6 @@ testReflection() {
   });
   InstanceMirror instanceMirror = reflector.reflect(dic);
   instanceMirror.invokeSetter("index", 3);
-  instanceMirror.invoke('memberName', ["2"]);
+  instanceMirror.invokeSetter('memberName', ["2"]);
   print(dic.index);
 }
