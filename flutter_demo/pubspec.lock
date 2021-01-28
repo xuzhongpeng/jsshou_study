@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "1.2.1"
   build_runner:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: build_runner
       url: "https://pub.flutter-io.cn"
@@ -126,7 +126,7 @@ packages:
       name: collection
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.14.12"
+    version: "1.14.11"
   connectivity:
     dependency: transitive
     description:
@@ -267,7 +267,7 @@ packages:
       name: gql
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.12.4"
+    version: "0.12.2"
   graphql:
     dependency: "direct main"
     description:
@@ -323,7 +323,7 @@ packages:
       name: intl
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.16.1"
+    version: "0.16.0"
   io:
     dependency: transitive
     description:
@@ -708,5 +708,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=2.7.2 <3.0.0"
+  dart: ">=2.7.0 <3.0.0"
   flutter: ">=1.12.13+hotfix.5 <2.0.0"

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
 
 /**
  * Skeleton of an Android Things activity.
@@ -25,10 +28,14 @@ import android.os.Bundle;
  * @see <a href="https://github.com/androidthings/contrib-drivers#readme">https://github.com/androidthings/contrib-drivers#readme</a>
  */
 public class MainActivity extends Activity {
-
+    private LinearLayout mainLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainLayout = (LinearLayout) findViewById(R.id.main_layout);
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View buttonLayout = layoutInflater.inflate(R.layout.button_layout, null);
+        mainLayout.addView(buttonLayout);
     }
 }
