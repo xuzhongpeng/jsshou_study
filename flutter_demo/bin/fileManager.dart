@@ -89,7 +89,8 @@ class MySqlManager {
     result = await _conn
         .queryMulti(
             'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-            method.map((v) => v.toList()).toList())
+        [["1","1","1","1","1","1","1","1","1","1"]])
+            // method.map((v) => v.toList()).toList())
         .catchError((e) {
       print(e.sqlState);
     });
