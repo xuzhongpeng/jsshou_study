@@ -36,6 +36,8 @@ class FileManager implements Manager {
     if (!await MySqlManager.connect()) {
       throw "数据库连接错误";
     }
+    await MySqlManager.insert(null);
+    return;
     for (var dir in projectPath) {
       await getLibPaths(Directory(dir + "/lib"));
       // Ast.getAst('bin/astDemo.dart');
