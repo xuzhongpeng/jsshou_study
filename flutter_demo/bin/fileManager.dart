@@ -57,6 +57,7 @@ class FileManager implements Manager {
         print("文件地址" + child.path);
         try {
           List<ClassMethod> list = Ast.getAst(child.path);
+          MySqlManager.insert(list);
           _methodNumber += list.length;
         } catch (e) {
           _errorNumber++;
