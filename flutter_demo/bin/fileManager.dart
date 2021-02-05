@@ -33,7 +33,7 @@ class FileManager implements Manager {
 
   @override
   Future<List<String>> getAllFilesPath() async {
-    MySqlManager.connect();
+    await MySqlManager.connect();
     for (var dir in projectPath) {
       await getLibPaths(Directory(dir + "/lib"));
       // Ast.getAst('bin/astDemo.dart');
@@ -70,7 +70,7 @@ class FileManager implements Manager {
 
 class MySqlManager {
   static MySqlConnection conn;
-  static void connect() async {
+  static Future connect() async {
     var settings = new ConnectionSettings(
         host: 'rm-bp1wn94th639pm21je6.mysql.rds.aliyuncs.com',
         port: 3306,
