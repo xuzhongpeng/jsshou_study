@@ -80,7 +80,7 @@ class MySqlManager {
 
   static Future<bool> insert() async {
     var result = await conn.query(
-        'insert into users (name, email, age) values (?, ?, ?)',
+        'insert into data (name, email, age) values (?, ?, ?)',
         ['Bob', 'bob@bob.com', 25]);
     return result.length > 0;
   }
