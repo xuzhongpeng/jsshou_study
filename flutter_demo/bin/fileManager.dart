@@ -36,8 +36,8 @@ class FileManager implements Manager {
     if (!await MySqlManager.connect()) {
       throw "数据库连接错误";
     }
-    await MySqlManager.insert(null);
-    throw '';
+    // await MySqlManager.insert(null);
+    // throw '';
     for (var dir in projectPath) {
       await getLibPaths(Directory(dir + "/lib"));
       // Ast.getAst('bin/astDemo.dart');
@@ -90,9 +90,9 @@ class MySqlManager {
     var result;
     result = await _conn
         .queryMulti(
-            'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [["1","1","1","1","1","1","1","1","1","1"]])
-            // method.map((v) => v.toList()).toList())
+            'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,`desc`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        // [["1","1","1","1","1","1","1","1","1","1"]])
+            method.map((v) => v.toList()).toList())
         .catchError((e) {
       print(e.sqlState);
     });
