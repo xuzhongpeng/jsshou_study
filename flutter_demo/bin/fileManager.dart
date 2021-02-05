@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'getFlutter.dart';
+// ignore: unused_import
+import 'package:mysql1/mysql1.dart';
 
 abstract class Manager {
   List<String> projectPath;
@@ -61,5 +63,17 @@ class FileManager implements Manager {
         }
       }
     }
+  }
+}
+
+class MySqlManager {
+  static void connect() async {
+    var settings = new ConnectionSettings(
+        host: 'localhost',
+        port: 3306,
+        user: 'bob',
+        password: 'wibble',
+        db: 'mydb');
+    var conn = await MySqlConnection.connect(settings);
   }
 }
