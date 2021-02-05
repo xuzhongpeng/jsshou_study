@@ -6,7 +6,6 @@ import 'dart:convert';
 // import 'fileManager.dart';
 import 'getFlutter.dart';
 import 'reflection/demo.dart';
-import 'main.reflectable.dart';
 
 String chart(List<int> items) {
   return jsonEncode({
