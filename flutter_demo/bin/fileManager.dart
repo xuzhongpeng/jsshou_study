@@ -42,6 +42,7 @@ class FileManager implements Manager {
     }
     print("总共方法数量" + _methodNumber.toString());
     print("总共错误文件数量" + _errorNumber.toString());
+    MySqlManager.close();
     return null;
   }
 
