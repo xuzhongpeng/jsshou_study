@@ -70,11 +70,11 @@ class MySqlManager {
   static MySqlConnection conn;
   static void connect() async {
     var settings = new ConnectionSettings(
-        host: 'localhost',
+        host: 'rm-bp1wn94th639pm21je6.mysql.rds.aliyuncs.com',
         port: 3306,
-        user: 'bob',
-        password: 'wibble',
-        db: 'mydb');
+        user: 'gunma',
+        password: '8Xno8Es4HIlQ95yD',
+        db: 'gfe_method_analysis');
     conn = await MySqlConnection.connect(settings);
   }
 
