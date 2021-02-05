@@ -77,4 +77,6 @@ class MySqlManager {
         db: 'mydb');
     conn = await MySqlConnection.connect(settings);
   }
+
+  static Future<bool> 
 }
