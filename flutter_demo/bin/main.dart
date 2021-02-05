@@ -28,10 +28,10 @@ void main() {
   // print(_createFileName(16));
   // print(DownFiles().getVersion('PRINT'));
 
-  initializeReflectable();
-  testReflection();
+  // initializeReflectable();
+  // testReflection();
   
-  // getAstTest();
+  getAstTest();
 
   // FileManager().getAllFilesPath();
 
