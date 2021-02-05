@@ -24,7 +24,7 @@ class FileManager implements Manager {
     "/Users/admin/Desktop/company/flutter/gm_webview",
     "/Users/admin/Desktop/company/flutter/gmwebview",
     "/Users/admin/Desktop/company/flutter/trojan",
-    "/Users/admin/Desktop/company/new_flutter/gm_utils",
+    "/Users/admin/Desktop/company/new_flutter/single",
     "/Users/admin/Desktop/company/new_flutter/flutter_colorsizemanage",
     "/Users/admin/Desktop/company/new_flutter/qrcode",
   ];
