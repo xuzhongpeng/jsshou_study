@@ -95,4 +95,8 @@ class MySqlManager {
         ]);
     return result.length > 0;
   }
+
+  static Future close() async {
+    await conn.close();
+  }
 }
