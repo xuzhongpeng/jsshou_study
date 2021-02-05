@@ -12,7 +12,6 @@ class FileManager implements Manager {
   List<String> projectPath = [
     "/Users/admin/Desktop/company/flutter/gm_single_page",
     "/Users/admin/Desktop/company/flutter/staffperformance-master",
-    "/Users/admin/Desktop/company/flutter/gm_uikit",
     "/Users/admin/Desktop/company/flutter/base_list",
     "/Users/admin/Desktop/company/flutter/gm_networking",
     "/Users/admin/Desktop/company/flutter/gm_browser",
@@ -24,7 +23,8 @@ class FileManager implements Manager {
     "/Users/admin/Desktop/company/flutter/gm_webview",
     "/Users/admin/Desktop/company/flutter/gmwebview",
     "/Users/admin/Desktop/company/flutter/trojan",
-    "/Users/admin/Desktop/company/new_flutter/single",
+    "/Users/admin/Desktop/company/flutter/gm_single_page/packages/gm_utils",
+    "/Users/admin/Desktop/company/flutter/gm_single_page/packages/gm_uikit",
     "/Users/admin/Desktop/company/new_flutter/flutter_colorsizemanage",
     "/Users/admin/Desktop/company/new_flutter/qrcode",
   ];
