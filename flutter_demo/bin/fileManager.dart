@@ -90,7 +90,7 @@ class MySqlManager {
         .queryMulti(
             'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             method.map((v) => v.toList()).toList())
-        .catchError((MySqlException e) {
+        .catchError((e) {
       print(e.sqlState);
     });
 
