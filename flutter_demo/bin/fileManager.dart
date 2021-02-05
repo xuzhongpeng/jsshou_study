@@ -86,7 +86,7 @@ class MySqlManager {
 
   static Future<bool> insert(List<ClassMethod> method) async {
     var result = await _conn.queryMulti(
-        'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?,?,?,?,?,?,?,?)',
+        'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         method.map((v) => v.toList()).toList());
     return result.length > 0;
   }
