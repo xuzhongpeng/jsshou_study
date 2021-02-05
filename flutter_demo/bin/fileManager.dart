@@ -81,7 +81,7 @@ class MySqlManager {
   static Future<bool> insert(ClassMethod method) async {
     var result = await conn.query(
         'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?,?,?,?,?,?,?,?)',
-        [method.platform,'',method.className,method.annotation,method.params,method.returnParams,method.lineNumber,method.]);
+        [method.platform,'',method.className,method.annotation,method.params,method.returnParams,method.lineNumber,method.byte,method.asc]);
     return result.length > 0;
   }
 }
