@@ -14,7 +14,7 @@ class _RenderObjectDemoState extends State<RenderObjectDemo>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController();
   }
 
   @override
