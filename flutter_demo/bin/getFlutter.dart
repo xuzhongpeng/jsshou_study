@@ -47,7 +47,7 @@ class Visitor<R> extends RecursiveAstVisitor {
         }
         // 入参
         {
-          cm.returnParams = member.parameters.toString();
+          cm.params = member.parameters.toString();
         }
         // 出参
         {
