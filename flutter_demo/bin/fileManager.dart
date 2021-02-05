@@ -69,25 +69,26 @@ class FileManager implements Manager {
 }
 
 class MySqlManager {
-  static MySqlConnection conn;
-  static Future connect() async {
+  static MySqlConnection _conn;
+  static Future<bool> connect() async {
     var settings = new ConnectionSettings(
         host: 'rm-bp1wn94th639pm21je6.mysql.rds.aliyuncs.com',
         port: 3306,
         user: 'gunma',
         password: '8Xno8Es4HIlQ95yD',
         db: 'gfe_method_analysis');
-    conn = await MySqlConnection.connect(settings);
+    _conn = await MySqlConnection.connect(settings);
+    return _conn!=null;
   }
 
   static Future<bool> insert(List<ClassMethod> method) async {
-    var result = await conn.queryMulti(
+    var result = await _conn.queryMulti(
         'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?,?,?,?,?,?,?,?)',
         method.map((v) => v.toList()).toList());
     return result.length > 0;
   }
 
   static Future close() async {
-    await conn.close();
+    await _conn.close();
   }
 }
