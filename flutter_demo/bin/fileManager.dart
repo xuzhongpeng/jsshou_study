@@ -33,7 +33,9 @@ class FileManager implements Manager {
 
   @override
   Future<List<String>> getAllFilesPath() async {
-    await MySqlManager.connect();
+    if (!await MySqlManager.connect()) {
+      throw "数据库连接错误";
+    }
     for (var dir in projectPath) {
       await getLibPaths(Directory(dir + "/lib"));
       // Ast.getAst('bin/astDemo.dart');
@@ -78,7 +80,7 @@ class MySqlManager {
         password: '8Xno8Es4HIlQ95yD',
         db: 'gfe_method_analysis');
     _conn = await MySqlConnection.connect(settings);
-    return _conn!=null;
+    return _conn != null;
   }
 
   static Future<bool> insert(List<ClassMethod> method) async {
