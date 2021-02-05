@@ -67,6 +67,7 @@ class FileManager implements Manager {
 }
 
 class MySqlManager {
+  static MySqlConnection conn;
   static void connect() async {
     var settings = new ConnectionSettings(
         host: 'localhost',
@@ -74,6 +75,6 @@ class MySqlManager {
         user: 'bob',
         password: 'wibble',
         db: 'mydb');
-    var conn = await MySqlConnection.connect(settings);
+    conn = await MySqlConnection.connect(settings);
   }
 }
