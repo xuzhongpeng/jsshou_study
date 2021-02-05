@@ -78,10 +78,10 @@ class MySqlManager {
     conn = await MySqlConnection.connect(settings);
   }
 
-  static Future<bool> insert() async {
+  static Future<bool> insert(ClassMethod method) async {
     var result = await conn.query(
-        'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?)',
-        ['Bob', 'bob@bob.com', 25]);
+        'insert into data (platform, type, class,method,comment,input,output,method_line_count,method_char_count,desc) values (?, ?, ?,?,?,?,?,?,?,?)',
+        [method.platform,method.]);
     return result.length > 0;
   }
 }
