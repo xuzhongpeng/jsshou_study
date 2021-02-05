@@ -33,6 +33,7 @@ class FileManager implements Manager {
 
   @override
   Future<List<String>> getAllFilesPath() async {
+    MySqlManager.connect();
     for (var dir in projectPath) {
       await getLibPaths(Directory(dir + "/lib"));
       // Ast.getAst('bin/astDemo.dart');
