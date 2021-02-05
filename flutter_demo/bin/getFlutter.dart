@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:analyzer/analyzer.dart';
 
-
 class Ast {
   static List<ClassMethod> classMethods = [];
 //获取class 及 方法名
@@ -91,4 +90,19 @@ class ClassMethod {
   String lineNumber;
   // 字节数
   String byte;
+
+  List<String> toList() {
+    return [
+      this.platform,
+      '',
+      this.className,
+      this.methodName,
+      this.annotation,
+      this.params,
+      this.returnParams,
+      this.lineNumber,
+      this.byte,
+      this.asc
+    ];
+  }
 }
