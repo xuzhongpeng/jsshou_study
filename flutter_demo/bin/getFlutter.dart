@@ -93,16 +93,16 @@ class ClassMethod {
 
   List<String> toList() {
     return [
-      this.platform,
+      this.platform ?? "",
       '',
-      this.className,
-      this.methodName,
-      this.annotation,
-      this.params,
-      this.returnParams,
-      this.lineNumber,
-      this.byte,
-      this.asc
+      this.className ?? "",
+      this.methodName ?? "",
+      this.annotation ?? "",
+      this.params ?? "",
+      this.returnParams ?? "",
+      this.lineNumber ?? "",
+      this.byte ?? "",
+      this.asc ?? ""
     ];
   }
 }
