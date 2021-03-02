@@ -1,3 +1,12 @@
+//单调栈，时间复杂度O(N)
+#include <iostream>
+#include <vector>
+#include <stack>
+using namespace std;
+const int N = 500000+10;
+int a[N];
+int dp[N];
+stack<int> s;
 int main()
 {
     int n,res=0;
