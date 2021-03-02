@@ -9,7 +9,7 @@
         "-g",
         "${file}",
         "-o",
-        "build\\main.exe"
+        "${fileDirname}uild\\main.exe"
         // "build\\${fileBasenameNoExtension}.exe"
       ],
       "options": {
