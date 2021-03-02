@@ -13,7 +13,7 @@ class _RenderObjectDemoState extends State<ErrorWidgetDemo>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController();
   }
 
   @override

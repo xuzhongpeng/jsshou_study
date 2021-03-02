@@ -1,12 +1,24 @@
 package com.example.ui_project;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+=======
+import android.util.Log;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+>>>>>>> 2e3192901aa4ab99372295019f7cdb3dddea0603
 
 /**
  * Skeleton of an Android Things activity.
@@ -28,6 +40,7 @@ import android.widget.LinearLayout;
  * @see <a href="https://github.com/androidthings/contrib-drivers#readme">https://github.com/androidthings/contrib-drivers#readme</a>
  */
 public class MainActivity extends Activity {
+<<<<<<< HEAD
     private LinearLayout mainLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +50,82 @@ public class MainActivity extends Activity {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View buttonLayout = layoutInflater.inflate(R.layout.button_layout, null);
         mainLayout.addView(buttonLayout);
+=======
+    WebView webView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        webView = new WebView(this.getApplicationContext());
+//        WebView myWebView = (WebView) findViewById(R.id.webview);
+        setContentView(webView);
+        webView.requestFocusFromTouch();
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.setScrollbarFadingEnabled(false);
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setMinimumFontSize(1);
+        webView.getSettings().setMinimumFontSize(1);
+        webView.getSettings().setDomStorageEnabled(true);
+        //支持缩放
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setLayoutAlgorithm(android.webkit.WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webView.getSettings().setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            webView.setWebContentsDebuggingEnabled(true);
+        }
+        // 处理安全漏洞
+        webView.removeJavascriptInterface("searchBoxJavaBridge_");
+        webView.removeJavascriptInterface("accessibilityTraversal");
+        webView.removeJavascriptInterface("accessibility");
+        webView.setHorizontalScrollBarEnabled(false);
+        webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+        webView.setVerticalScrollBarEnabled(false);
+        webView.setWebViewClient(new WebViewClient() {
+            @SuppressWarnings("deprecation")
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return urlLoading(view,url);
+            }
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public boolean shouldOverrideUrlLoading(android.webkit.WebView view, WebResourceRequest request) {
+                String url = request.getUrl().toString();
+                return urlLoading(view,url);
+            }
+        });
+        webView.loadUrl("http://192.168.1.77:8080/demo/test_event.html");
+    }
+
+    public boolean urlLoading(WebView view,String url){
+        Log.i("gm",url);
+        // 如果网页中有需要发送邮件,短信,电话的拦截,调用系统自带软件
+        if (url.startsWith("mailto:") || url.startsWith("sms:") || url.startsWith("geo:")
+                || url.startsWith("tel:")) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);
+            return true;
+        }
+        final String NativeSchemeHeader = "native-asyn::";
+        if (url.startsWith(NativeSchemeHeader)) {
+            return true;
+        } else if (url.startsWith("http://") || url.startsWith("https://")) {
+            try {
+                webView.loadUrl(url);
+                return true;
+            } catch (Exception e) {
+                Log.i("gm", "shouldOverrideUrlLoading Exception:" + e);
+                return true;
+            }
+        } else {
+            return true;
+        }
+>>>>>>> 2e3192901aa4ab99372295019f7cdb3dddea0603
     }
 }
