@@ -6,7 +6,7 @@
       "label": "Compile", //修改此项
       "command": "D:\\code\\mingw64\\bin\\g++.exe",
       "args": [
-        "-g",
+        // "-g",
         "${file}",
         "-o",
         "${fileDirname}uild\\main.exe"
