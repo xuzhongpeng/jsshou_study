@@ -37,4 +37,5 @@ int main()
         res = max(res,peak*dist);
     }
     cout << res << endl; 
+    system("pause");
 }
