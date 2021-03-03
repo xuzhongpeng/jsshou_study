@@ -1,4 +1,5 @@
 //单调栈，时间复杂度O(N)
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 #include <stack>
