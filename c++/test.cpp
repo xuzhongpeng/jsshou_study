@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <pthread.h>
- 
+#include <stdlib.h>
 using namespace std;
  
 #define NUM_THREADS     5
