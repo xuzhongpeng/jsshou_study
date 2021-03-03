@@ -3,9 +3,11 @@ import 'dart:convert';
 
 // import "./downfiles.dart";
 // import 'dart_ast/getAst.dart';
-import 'fileManager.dart';
 // import 'getFlutter.dart';
+import 'dart_ast/getAst.dart';
+import 'dart_ast/test.dart';
 import 'reflection/demo.dart';
+import 'scanAllClass/fileManager.dart';
 
 String chart(List<int> items) {
   return jsonEncode({
@@ -30,9 +32,10 @@ void main() {
   // initializeReflectable();
   // testReflection();
   
+  astTest();
   // getAstTest();
 
-  FileManager().getAllFilesPath();
+  // FileManager().getAllFilesPath();
 
   // DownFiles().loadFiles(
   //     "https://gunma-app.oss-cn-hangzhou.aliyuncs.com/303/duoke-settings-v1.2.29.zip",

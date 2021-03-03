@@ -29,7 +29,7 @@
         "${fileDirname}/${fileBasenameNoExtension}.cpp",
         "-o",
         //"test.out",
-        "build/${fileBasenameNoExtension}.out",
+        "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
         "--debug"
       ],
       "group": {

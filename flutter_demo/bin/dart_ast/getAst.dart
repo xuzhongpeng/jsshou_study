@@ -1,20 +1,24 @@
 import 'dart:io';
 
 import 'package:analyzer/dart/ast/standard_ast_factory.dart';
-import 'package:analyzer/analyzer.dart';
+import 'package:analyzer/dart/ast/visitor.dart';
+import 'package:analyzer/dart/ast/ast.dart';
+import 'package:analyzer/dart/analysis/results.dart';
 // import 'package:front_end/src/scanner/token.dart';
-
+import 'package:analyzer/dart/analysis/utilities.dart';
 List<String> classNames = [];
 getAstTest() {
   File file = File('bin/dart_ast/code/ast_class.dart');
-  var ast =
-      parseCompilationUnit(file.readAsStringSync(), parseFunctionBodies: true);
+  // var ast =
+  //     parseCompilationUnit(file.readAsStringSync(), parseFunctionBodies: true);
+  ParseStringResult ast =
+      parseString(content:file.readAsStringSync());
   print('initial value: ');
-  print(ast.toSource());
+  print(ast.unit.toSource());
   var v = new Visitor();
-  ast.visitChildren(v);
+  ast.unit.visitChildren(v);
   print('After modification:');
-  print(ast.toSource());
+  print(ast.unit.toSource());
 }
 
 class Visitor<R> extends RecursiveAstVisitor {
@@ -154,7 +158,7 @@ class Visitor<R> extends RecursiveAstVisitor {
 
   @override
   R visitCompilationUnit(CompilationUnit node) {
-    node.visitChildren(this);
+    // node.visitChildren(this);
     print("visitCompilationUnit:" + node.toSource());
     return null;
   }
