@@ -60,9 +60,10 @@ class StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     print('执行');
     //
-    return MyStore.init(
-      context: context,
-      child: Builder(builder: (context) {
+    // return MyStore.init(
+    //   context: context,
+    //   child:
+      return Builder(builder: (context) {
         return MaterialApp(
             supportedLocales: [
               const Locale('en', 'US'),
@@ -71,8 +72,8 @@ class StartPageState extends State<StartPage> {
             ],
             localizationsDelegates: [
               // ... app-specific localization delegate[s] here
-              SpecificLocalizationDelegate(
-                  MyStore.value<LocalIntl>(context).locale),
+              // SpecificLocalizationDelegate(
+              //     MyStore.value<LocalIntl>(context).locale),
               const TranslationsDelegate(),
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
@@ -82,7 +83,8 @@ class StartPageState extends State<StartPage> {
             home: Builder(builder: (context) {
               return MainPage(routes);
             }));
-      }),
+      }
+      // ),
     );
   }
 }
