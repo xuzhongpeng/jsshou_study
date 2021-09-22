@@ -14,11 +14,11 @@ class MyStore {
   static init({context, child}) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(builder: (_) => Counter()),
-        ChangeNotifierProvider(builder: (_) => UserModel()),
-        ChangeNotifierProvider(
-          builder: (_) => LocalIntl(),
-        )
+        // ChangeNotifierProvider(builder: (_) => Counter()),
+        // ChangeNotifierProvider(builder: (_) => UserModel()),
+        // ChangeNotifierProvider(
+        //   builder: (_) => LocalIntl(),
+        // )
       ],
       child: child,
     );

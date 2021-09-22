@@ -35,7 +35,7 @@ class _MyInherit extends State<MyInherit> {
 }
 
 class MyWelcomeInfo extends InheritedWidget {
-  MyWelcomeInfo({Key key, this.title, Widget child})
+  MyWelcomeInfo({Key key,  this.title,  @required Widget child})
       : super(key: key, child: child);
 
   String title;
@@ -50,14 +50,11 @@ class MyWelcomeInfo extends InheritedWidget {
 class MyNestedChild extends StatelessWidget {
   @override
   build(BuildContext context) {
-    final MyWelcomeInfo widget = context
-        .ancestorInheritedElementForWidgetOfExactType(MyWelcomeInfo)
-        .widget;
-    final MyWelcomeInfo widget1 =
-        context.inheritFromWidgetOfExactType(MyWelcomeInfo);
+    final MyWelcomeInfo widget =
+        context.dependOnInheritedWidgetOfExactType<MyWelcomeInfo>();
     print('child rebuild');
     return RaisedButton(
-      child: Text(widget1.title),
+      child: Text(widget.title ?? ""),
       onPressed: () {
         // widget.title = '2222';
         // print(widget.title);

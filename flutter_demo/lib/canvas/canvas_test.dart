@@ -57,8 +57,11 @@ class _CloseTapTapState extends State<CustomPaintRoute> {
                 ),
                 onTapDown: (TapDownDetails details) {
                   Offset position = details.globalPosition;
-                  RenderBox renderBox = context.findRenderObject();
-                  final topLeftPosition = renderBox.localToGlobal(Offset.zero);
+                  RenderBox renderBox = context.findRenderObject() as RenderBox;
+                  if(renderBox == null) {
+                    return;
+                  }
+                  final Offset topLeftPosition = renderBox.localToGlobal(Offset.zero);
                   var point = position - topLeftPosition;
                   var x = (point.dx / oneWidth).round();
                   var y = (point.dy / oneWidth).round();
@@ -99,8 +102,8 @@ class _CloseTapTapState extends State<CustomPaintRoute> {
 
   //判断胜负
   checkSuccess(Point nowPoint) {
-    List list = chesser == NowChesser.black ? blackList : whiteList;
-    List relative = new List();
+    List<Point> list = chesser == NowChesser.black ? blackList : whiteList;
+    List relative = [];
     searchRelative(list, nowPoint);
     // if (isSuccess == true) {
     //   isSuccess = false;
@@ -110,8 +113,8 @@ class _CloseTapTapState extends State<CustomPaintRoute> {
 //清楚棋盘
   clearPoint() {
     setState(() {
-      whiteList = new List();
-      blackList = new List();
+      whiteList = [];
+      blackList = [];
       isSuccess = false;
     });
   }
@@ -122,7 +125,7 @@ class _CloseTapTapState extends State<CustomPaintRoute> {
     Point searchPoint = nowPoint;
     int oneDirection = 1; //一个方向上的棋子个数
     //横竖上下斜角
-    Function mackDirection(int n, bool change) {
+    void mackDirection(int n, bool change) {
       for (int i = 1; i < 5 && isSuccess == false; i++) {
         // print(next);
         Point next;
@@ -208,7 +211,7 @@ class Point {
 class MyPainter extends CustomPainter {
   final List<Point> blackList; //黑棋
   final List<Point> whitekList; //黑棋
-  MyPainter({this.blackList, this.whitekList});
+  MyPainter({ this.blackList,  this.whitekList});
   @override
   void paint(Canvas canvas, Size size) {
     double eWidth = size.width / caseWidth;

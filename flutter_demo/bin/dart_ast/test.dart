@@ -31,24 +31,25 @@ import 'getAst.dart';
 //   AnalysisContext context = collection.contextFor(path.first);
 //   return await context.currentSession.getResolvedUnit(path.first);
 // }
-PhysicalResourceProvider resourceProvider = PhysicalResourceProvider.INSTANCE;
-  DartSdk sdk = new FolderBasedDartSdk(
-  resourceProvider, resourceProvider.getFolder('/Users/admin/Desktop/myCode/flutter/my_test/flutter_demo/bin/dart_ast/code/'));
 
-  var resolvers = [
-    new DartUriResolver(sdk),
-    new ResourceUriResolver(resourceProvider)
-  ];
+// PhysicalResourceProvider resourceProvider = PhysicalResourceProvider.INSTANCE;
+//   DartSdk sdk = new FolderBasedDartSdk(
+//   resourceProvider, resourceProvider.getFolder('/Users/admin/Desktop/myCode/flutter/my_test/flutter_demo/bin/dart_ast/code/'));
 
-  AnalysisContextImpl context = AnalysisEngine.instance.createAnalysisContext()
-  ..sourceFactory = new SourceFactory(resolvers);
+//   var resolvers = [
+//     new DartUriResolver(sdk),
+//     new ResourceUriResolver(resourceProvider)
+//   ];
 
-  Source source = new FileSource(resourceProvider.getFile(item.path));
-  ChangeSet changeSet = new ChangeSet()..addedSource(source);
-  context.applyChanges(changeSet);
-  LibraryElement libElement = context.computeLibraryElement(source);
+//   AnalysisContextImpl context = AnalysisEngine.instance.createAnalysisContext()
+//   ..sourceFactory = new SourceFactory(resolvers);
 
-  CompilationUnit resolvedUnit =
-      context.resolveCompilationUnit(source, libElement);
+//   Source source = new FileSource(resourceProvider.getFile(item.path));
+//   ChangeSet changeSet = new ChangeSet()..addedSource(source);
+//   context.applyChanges(changeSet);
+//   LibraryElement libElement = context.computeLibraryElement(source);
 
-  var element = resolvedUnit.declaredElement;
+//   CompilationUnit resolvedUnit =
+//       context.resolveCompilationUnit(source, libElement);
+
+//   var element = resolvedUnit.declaredElement;

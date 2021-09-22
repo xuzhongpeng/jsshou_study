@@ -32,7 +32,7 @@ void main() {
   // initializeReflectable();
   // testReflection();
   
-  astTest();
+  // astTest();
   // getAstTest();
 
   // FileManager().getAllFilesPath();

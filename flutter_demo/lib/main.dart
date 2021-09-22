@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/mvvn/project/graphql_demo.dart';
-import 'package:flutter_demo/mvvn/mvvm.dart';
+// import 'package:flutter_demo/mvvm/project/graphql_demo.dart';
+// import 'package:flutter_demo/mvvm/mvvm.dart';
 import 'package:flutter_demo/platform/platform.dart';
 import 'package:flutter_demo/render_object/render_object.dart';
 import './provider/index.dart';
@@ -14,8 +14,6 @@ import './stream/stream_test.dart';
 import './inherit/my_inherit.dart';
 import './charts/charts_test.dart';
 import 'package:flutter_demo/canvas/canvas_test.dart';
-import './scoped/index.dart';
-import './scoped/store/index.dart';
 import './AnimatedBuilder/index.dart';
 import './notification/index.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -45,11 +43,9 @@ class StartPageState extends State<StartPage> {
   }
 
   Map<String, WidgetBuilder> routes = {
-    'MVVM': (_) => Mvvm(),
     'provider': (_) => MyProvider(),
     'stream': (_) => CounterPage(),
     'inherit': (_) => MyInherit(),
-    "scoped": (_) => MyScoped(),
     'charts': (_) => ChartsTest(),
     '五子棋': (_) => CustomPaintRoute(),
     'AnimatedBuilder': (_) => MyAnimatedBuilder(),
@@ -66,30 +62,27 @@ class StartPageState extends State<StartPage> {
     //
     return MyStore.init(
       context: context,
-      child: MyStoreScoped.init(
-        context: context,
-        child: Builder(builder: (context) {
-          return MaterialApp(
-              supportedLocales: [
-                const Locale('en', 'US'),
-                const Locale('zh', 'CH'),
-                // ... other locales the app supports
-              ],
-              localizationsDelegates: [
-                // ... app-specific localization delegate[s] here
-                SpecificLocalizationDelegate(
-                    MyStore.value<LocalIntl>(context).locale),
-                const TranslationsDelegate(),
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              routes: routes,
-              navigatorObservers: [OwnNavigatorObserver()],
-              home: Builder(builder: (context) {
-                return MainPage(routes);
-              }));
-        }),
-      ),
+      child: Builder(builder: (context) {
+        return MaterialApp(
+            supportedLocales: [
+              const Locale('en', 'US'),
+              const Locale('zh', 'CH'),
+              // ... other locales the app supports
+            ],
+            localizationsDelegates: [
+              // ... app-specific localization delegate[s] here
+              SpecificLocalizationDelegate(
+                  MyStore.value<LocalIntl>(context).locale),
+              const TranslationsDelegate(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            routes: routes,
+            navigatorObservers: [OwnNavigatorObserver()],
+            home: Builder(builder: (context) {
+              return MainPage(routes);
+            }));
+      }),
     );
   }
 }

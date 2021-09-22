@@ -58,7 +58,7 @@ class FlutterReduxApp extends StatelessWidget {
                 children: [
                   new Text(
                     count.count.toString(),
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.bodyText1,
                   )
                 ],
               ),
