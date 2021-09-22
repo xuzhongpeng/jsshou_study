@@ -1,47 +1,39 @@
 package com.example.ui_project;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
-<<<<<<< HEAD
+import android.os.PowerManager;
+import android.os.SystemClock;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-=======
-import android.util.Log;
-import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
->>>>>>> 2e3192901aa4ab99372295019f7cdb3dddea0603
 
-/**
- * Skeleton of an Android Things activity.
- * <p>
- * Android Things peripheral APIs are accessible through the class
- * PeripheralManagerService. For example, the snippet below will open a GPIO pin and
- * set it to HIGH:
- *
- * <pre>{@code
- * PeripheralManagerService service = new PeripheralManagerService();
- * mLedGpio = service.openGpio("BCM6");
- * mLedGpio.setDirection(Gpio.DIRECTION_OUT_INITIALLY_LOW);
- * mLedGpio.setValue(true);
- * }</pre>
- * <p>
- * For more complex peripherals, look for an existing user-space driver, or implement one if none
- * is available.
- *
- * @see <a href="https://github.com/androidthings/contrib-drivers#readme">https://github.com/androidthings/contrib-drivers#readme</a>
- */
+import androidx.annotation.RequiresApi;
+
+import com.example.ui_project.opengl.OpenGLActivity;
+import com.example.ui_project.thread.MyRunnable;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+
 public class MainActivity extends Activity {
-<<<<<<< HEAD
     private LinearLayout mainLayout;
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    final static String Tag = "mainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,83 +41,127 @@ public class MainActivity extends Activity {
         mainLayout = (LinearLayout) findViewById(R.id.main_layout);
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View buttonLayout = layoutInflater.inflate(R.layout.button_layout, null);
+        View buttonLayout2 = layoutInflater.inflate(R.layout.button_layout2, null);
+        View buttonLayout3 = layoutInflater.inflate(R.layout.button_layout3, null);
         mainLayout.addView(buttonLayout);
-=======
-    WebView webView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        webView = new WebView(this.getApplicationContext());
-//        WebView myWebView = (WebView) findViewById(R.id.webview);
-        setContentView(webView);
-        webView.requestFocusFromTouch();
-        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.setScrollbarFadingEnabled(false);
-
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setMinimumFontSize(1);
-        webView.getSettings().setMinimumFontSize(1);
-        webView.getSettings().setDomStorageEnabled(true);
-        //支持缩放
-        webView.getSettings().setSupportZoom(true);
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setDisplayZoomControls(false);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setLayoutAlgorithm(android.webkit.WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            webView.getSettings().setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        mainLayout.addView(buttonLayout2);
+        mainLayout.addView(buttonLayout3);
+        final Context context = this;
+        Intent intent = new Intent();
+        String packageName = context.getPackageName();
+        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        if (!pm.isIgnoringBatteryOptimizations(packageName)) {
+            intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+            intent.setData(Uri.parse("package:" + packageName));
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            webView.setWebContentsDebuggingEnabled(true);
-        }
-        // 处理安全漏洞
-        webView.removeJavascriptInterface("searchBoxJavaBridge_");
-        webView.removeJavascriptInterface("accessibilityTraversal");
-        webView.removeJavascriptInterface("accessibility");
-        webView.setHorizontalScrollBarEnabled(false);
-        webView.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
-        webView.setVerticalScrollBarEnabled(false);
-        webView.setWebViewClient(new WebViewClient() {
-            @SuppressWarnings("deprecation")
+        final Intent intentOne = new Intent(context, TimerService.class);
+        buttonLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return urlLoading(view,url);
-            }
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public boolean shouldOverrideUrlLoading(android.webkit.WebView view, WebResourceRequest request) {
-                String url = request.getUrl().toString();
-                return urlLoading(view,url);
+            public void onClick(View v) {
+                //连续启动Service
+                startService(intentOne);
             }
         });
-        webView.loadUrl("http://192.168.1.77:8080/demo/test_event.html");
+        buttonLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                stopService(intentOne);
+                Intent intent = new Intent(context, OpenGLActivity.class);
+                startActivity(intent);
+            }
+        });
+        // 开启线程
+        buttonLayout3.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                Log.i(Tag, "UI线程id是" + Thread.currentThread().getId());
+                MyRunnable runnable = new MyRunnable();
+                new Thread(runnable).start();
+
+                new Thread(new Runnable() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
+                    @Override
+                    public void run() {
+                        Log.i(Tag, "线程ID是" + Thread.currentThread().getId());
+                    }
+                }).start();
+            }
+        });
     }
 
-    public boolean urlLoading(WebView view,String url){
-        Log.i("gm",url);
-        // 如果网页中有需要发送邮件,短信,电话的拦截,调用系统自带软件
-        if (url.startsWith("mailto:") || url.startsWith("sms:") || url.startsWith("geo:")
-                || url.startsWith("tel:")) {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);
-            return true;
+    public final static String EXTRA_MESSAGE = "com.example.ui_project.MESSAGE";
+
+    public void sendMessage(View view) {
+        // Do something in response to button
+        Log.i("xzp", "按钮");
+        Intent intent = new Intent(this, MainActivity2.class);
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    // 步骤1:加载生成的so库文件
+    // 注意要跟.so库文件名相同
+    static {
+        System.loadLibrary("hello_jni");
+    }
+
+    // 步骤2:定义在JNI中实现的方法
+    public native String getFromJNI();
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void  helloJni(View view){
+            Log.i(Tag,getFromJNI());
+    }
+    /// 开启线程池
+    public void openThreadPool(View view) {
+        ExecutorService a = Executors.newFixedThreadPool(5);
+        ThreadPoolExecutor fixedThreadPool = new ThreadPoolExecutor(5,
+                10,
+                1,
+                TimeUnit.SECONDS,
+                new LinkedBlockingDeque<Runnable>(100)
+        );
+        for (int i = 0; i < 30; i++) {
+            final int finalI = i;
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+//                    SystemClock.sleep(2000);
+                    Log.d("google_lenve_fb", "run: " + finalI + "   "+ Thread.currentThread().getId());
+                }
+            };
+            fixedThreadPool.execute(runnable);
         }
-        final String NativeSchemeHeader = "native-asyn::";
-        if (url.startsWith(NativeSchemeHeader)) {
-            return true;
-        } else if (url.startsWith("http://") || url.startsWith("https://")) {
-            try {
-                webView.loadUrl(url);
-                return true;
-            } catch (Exception e) {
-                Log.i("gm", "shouldOverrideUrlLoading Exception:" + e);
-                return true;
-            }
-        } else {
-            return true;
-        }
->>>>>>> 2e3192901aa4ab99372295019f7cdb3dddea0603
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    public boolean isIgnoringBatteryOptimizations(Context context) {
+        boolean isIgnoring = false;
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+
+        if (powerManager != null)
+            isIgnoring = powerManager.isIgnoringBatteryOptimizations("com.example.ui_project");
+
+        return isIgnoring;
+    }
+
+    /**
+     * 跳转到指定应用的首页
+     */
+    public void showActivity(String packageName, Context context) {
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 跳转到指定应用的指定页面
+     */
+    public void showActivity(String packageName, String activityDir, Context context) {
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName(packageName, activityDir));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
 }
